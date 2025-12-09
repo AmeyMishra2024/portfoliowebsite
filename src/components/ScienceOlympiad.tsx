@@ -1,0 +1,223 @@
+import { Award, Building2, Zap, Medal, Trophy } from 'lucide-react';
+
+export default function ScienceOlympiad() {
+  const regionalWins = [
+    { event: 'Tower', years: '9th & 10th Grade', count: 2 },
+    { event: 'Air Trajectory', years: '9th & 10th Grade', count: 2 },
+    { event: 'Flight', years: '9th Grade', count: 1 },
+    { event: 'Helicopter', years: '10th Grade', count: 1 },
+    { event: 'Electric Vehicle', years: '10th Grade', count: 1 },
+  ];
+
+  const stateWins = [
+    { event: 'Storm the Castle', place: '1st Place', year: '8th Grade' },
+  ];
+
+  const allMedals = [
+    { type: 'Regional Gold', count: 6 },
+    { type: 'Regional Silver', count: 1 },
+    { type: 'Regional Bronze', count: 4 },
+    { type: 'State Gold', count: 1 },
+    { type: 'State Bronze', count: 2 },
+  ];
+
+  const skills = [
+    {
+      title: 'Engineering Design',
+      description: 'Advanced CAD modeling, structural analysis, iterative prototyping, and optimization of building events',
+      icon: Building2,
+    },
+    {
+      title: 'Physics Application',
+      description: 'Trajectory calculations, aerodynamics testing, energy system optimization, and precision engineering',
+      icon: Zap,
+    },
+    {
+      title: 'Problem Solving',
+      description: 'Analytical thinking, constraint-based optimization, rapid testing and iteration, data-driven improvements',
+      icon: Award,
+    },
+  ];
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
+      <section className="bg-gradient-to-r from-emerald-600 to-teal-600 text-white py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 className="text-5xl font-bold mb-4">Science Olympiad</h1>
+          <p className="text-xl text-emerald-100">
+            Team President | Engineering Events Specialist
+          </p>
+        </div>
+      </section>
+
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid md:grid-cols-4 gap-6 mb-16">
+          <div className="bg-gradient-to-br from-yellow-500 to-yellow-600 text-white rounded-lg shadow-lg p-6 text-center">
+            <Trophy size={48} className="mx-auto mb-3" />
+            <h3 className="text-2xl font-bold mb-2">President</h3>
+            <p className="text-yellow-100">2 Years</p>
+          </div>
+          <div className="bg-gradient-to-br from-emerald-500 to-emerald-600 text-white rounded-lg shadow-lg p-6 text-center">
+            <Medal size={48} className="mx-auto mb-3" />
+            <h3 className="text-2xl font-bold mb-2">7x</h3>
+            <p className="text-emerald-100">Regional 1st Place</p>
+          </div>
+          <div className="bg-gradient-to-br from-teal-500 to-teal-600 text-white rounded-lg shadow-lg p-6 text-center">
+            <Award size={48} className="mx-auto mb-3" />
+            <h3 className="text-2xl font-bold mb-2">1x</h3>
+            <p className="text-teal-100">State Gold Medal</p>
+          </div>
+          <div className="bg-gradient-to-br from-cyan-500 to-cyan-600 text-white rounded-lg shadow-lg p-6 text-center">
+            <Building2 size={48} className="mx-auto mb-3" />
+            <h3 className="text-2xl font-bold mb-2">Building</h3>
+            <p className="text-cyan-100">Events Specialist</p>
+          </div>
+        </div>
+
+        <div className="bg-white rounded-lg shadow-lg p-8 mb-16">
+          <h2 className="text-3xl font-bold text-slate-900 mb-6">Leadership Role</h2>
+          <div className="flex flex-col md:flex-row gap-8 items-start">
+            <div className="md:w-1/3">
+              <div className="bg-emerald-50 rounded-lg p-4">
+                <div className="aspect-square bg-slate-200 rounded flex items-center justify-center">
+                  <div className="text-center">
+                    <Award size={64} className="mx-auto mb-2 text-slate-400" />
+                    <p className="text-slate-500">Team Photo</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="md:w-2/3">
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">
+                Harmony Science Olympiad Team President
+              </h3>
+              <p className="text-slate-700 mb-4">
+                Led the Harmony Science Olympiad team for two consecutive years (9th & 10th grade),
+                overseeing team strategy, member development, and competition preparation.
+              </p>
+              <div className="space-y-3">
+                <div className="flex items-start gap-2">
+                  <div className="w-2 h-2 bg-emerald-600 rounded-full mt-2 flex-shrink-0" />
+                  <p className="text-slate-700">
+                    Organized practice sessions and coordinated with event coaches
+                  </p>
+                </div>
+                <div className="flex items-start gap-2">
+                  <div className="w-2 h-2 bg-emerald-600 rounded-full mt-2 flex-shrink-0" />
+                  <p className="text-slate-700">
+                    Mentored newer team members in engineering and building events
+                  </p>
+                </div>
+                <div className="flex items-start gap-2">
+                  <div className="w-2 h-2 bg-emerald-600 rounded-full mt-2 flex-shrink-0" />
+                  <p className="text-slate-700">
+                    Developed team strategies for maximizing points across all events
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-8 mb-16">
+          <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div className="bg-yellow-500 text-white p-6">
+              <h2 className="text-2xl font-bold">Regional Championships</h2>
+            </div>
+            <div className="p-6">
+              <h3 className="text-xl font-bold text-slate-900 mb-4">1st Place Finishes</h3>
+              <div className="space-y-3">
+                {regionalWins.map((win, index) => (
+                  <div key={index} className="bg-yellow-50 rounded-lg p-4">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <h4 className="font-bold text-slate-900">{win.event}</h4>
+                        <p className="text-sm text-slate-600">{win.years}</p>
+                      </div>
+                      <div className="bg-yellow-500 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold">
+                        {win.count}x
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div className="bg-emerald-500 text-white p-6">
+              <h2 className="text-2xl font-bold">State Championships</h2>
+            </div>
+            <div className="p-6">
+              <h3 className="text-xl font-bold text-slate-900 mb-4">Top Finishes</h3>
+              <div className="space-y-3">
+                {stateWins.map((win, index) => (
+                  <div key={index} className="bg-emerald-50 rounded-lg p-4 border-l-4 border-emerald-600">
+                    <h4 className="font-bold text-slate-900 text-lg">{win.event}</h4>
+                    <p className="text-emerald-700 font-semibold">{win.place}</p>
+                    <p className="text-sm text-slate-600">{win.year}</p>
+                  </div>
+                ))}
+                <div className="pt-4 border-t border-slate-200">
+                  <h4 className="font-bold text-slate-900 mb-3">Additional Medals</h4>
+                  <div className="flex items-center gap-2 text-sm text-slate-600">
+                    <Trophy size={16} className="text-yellow-600" />
+                    <span>1x State Gold</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-slate-600 mt-1">
+                    <Trophy size={16} className="text-orange-600" />
+                    <span>2x State Bronze</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-white rounded-lg shadow-lg p-8 mb-16">
+          <h2 className="text-3xl font-bold text-slate-900 mb-6">Skills Developed</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            {skills.map((skill, index) => {
+              const Icon = skill.icon;
+              return (
+                <div key={index} className="text-center">
+                  <div className="bg-emerald-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Icon size={32} className="text-emerald-600" />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900 mb-2">{skill.title}</h3>
+                  <p className="text-slate-600">{skill.description}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        <div className="bg-white rounded-lg shadow-lg p-8 mb-16">
+          <h2 className="text-3xl font-bold text-slate-900 mb-6">Medal Count</h2>
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+            {allMedals.map((medal, index) => (
+              <div key={index} className="text-center bg-slate-50 rounded-lg p-4">
+                <div className="text-3xl font-bold text-slate-900">{medal.count}</div>
+                <div className="text-sm text-slate-600 mt-1">{medal.type}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="bg-white rounded-lg shadow-lg p-8">
+          <h2 className="text-3xl font-bold text-slate-900 mb-6">Competition Gallery</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[1, 2, 3, 4, 5, 6].map((i) => (
+              <div key={i} className="bg-slate-200 rounded-lg aspect-video flex items-center justify-center hover:bg-slate-300 transition-colors">
+                <div className="text-center">
+                  <Medal size={48} className="mx-auto mb-2 text-slate-400" />
+                  <p className="text-slate-500 text-sm">Event Photo {i}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
