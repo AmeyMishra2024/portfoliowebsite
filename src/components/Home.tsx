@@ -1,4 +1,5 @@
-import { Mail, Phone, Linkedin, MapPin, Award, Rocket, Users, Sparkles } from 'lucide-react';
+import { Mail, Phone, Linkedin, MapPin, Award, Rocket, Users, Sparkles, HandCoins } from 'lucide-react';
+import { useEffect, useRef } from 'react';
 
 export default function Home() {
   const skills = [
@@ -28,20 +29,25 @@ export default function Home() {
     },
     {
       icon: Users,
-      value: '3',
-      label: 'Robotics & STEM teams founded/led',
+      value: '3+',
+      label: 'Teams managed (FTC + clubs)',
+    },
+    {
+      icon: HandCoins,
+      value: '$20K+',
+      label: 'Funding raised for teams',
     },
     {
       icon: Rocket,
-      value: '200+',
-      label: 'Students reached through Cosmobots programs',
+      value: '1,000+',
+      label: 'Volunteer hours (350+ personal)',
     },
   ];
 
   const summaryHighlights = [
-    'Founder of Cosmobots Robotics, delivering STEM access to underserved schools.',
-    'FTC captain leading teams to top 0.5% global performance with strong mechanical and software strategy.',
-    'Researching aerospace + AI applications through NASA programs and competitive challenges.',
+    'Founder of Cosmobots Robotics (league winners, international premier finalists) delivering STEM access to underserved schools.',
+    'FTC captain driving teams to top 0.5% global performance with advanced mech + software strategy.',
+    'NASA-linked research into aerospace + AI applications, targeting sustainable space systems.',
   ];
 
   const languages = [
@@ -50,10 +56,35 @@ export default function Home() {
     { name: 'Spanish', level: 'Limited' },
   ];
 
+  const heroRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleMove = (e: MouseEvent) => {
+      if (!heroRef.current) return;
+      const rect = heroRef.current.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      heroRef.current.style.setProperty('--cursor-x', `${x}%`);
+      heroRef.current.style.setProperty('--cursor-y', `${y}%`);
+    };
+    const node = heroRef.current;
+    node?.addEventListener('mousemove', handleMove);
+    return () => node?.removeEventListener('mousemove', handleMove);
+  }, []);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
-      <section className="relative bg-gradient-to-r from-slate-950 via-sky-900 to-sky-800 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section
+        ref={heroRef}
+        className="relative overflow-hidden bg-gradient-to-r from-slate-950 via-sky-900 to-sky-800 text-white py-20"
+        style={{
+          backgroundImage:
+            'radial-gradient(circle at var(--cursor-x,50%) var(--cursor-y,50%), rgba(56,189,248,0.2), transparent 35%), radial-gradient(circle at 20% 30%, rgba(14,165,233,0.18), transparent 35%), radial-gradient(circle at 80% 20%, rgba(59,130,246,0.16), transparent 35%)',
+        }}
+      >
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(1px_1px_at_20%_20%,rgba(255,255,255,0.25),transparent),radial-gradient(1px_1px_at_80%_30%,rgba(255,255,255,0.15),transparent),radial-gradient(1px_1px_at_50%_70%,rgba(255,255,255,0.2),transparent)] opacity-60" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_10%_10%,rgba(186,230,253,0.1),transparent_25%),radial-gradient(circle_at_90%_20%,rgba(59,130,246,0.08),transparent_25%)] animate-pulse" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-5xl md:text-6xl font-bold mb-4 tracking-tight">
@@ -114,7 +145,7 @@ export default function Home() {
       </section>
 
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {stats.map((stat, index) => {
             const Icon = stat.icon;
             return (

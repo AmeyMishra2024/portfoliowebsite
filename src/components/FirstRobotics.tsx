@@ -3,7 +3,7 @@ import { Trophy, Users, Code, Wrench, Target, Award } from 'lucide-react';
 export default function FirstRobotics() {
   const team8790Achievements = [
     'League Finalist and Regional Runner-up',
-    'League Connect Award Winner (3x)',
+    '3x Connect Award Winner',
     'Regionals Qualifier (3x)',
     'Top 0.5% of over 8,000 global teams',
     'First place in Houston event',
@@ -38,24 +38,28 @@ export default function FirstRobotics() {
 
   const robotShowcase = [
     {
-      name: 'Cosmobots 25679: Modular Arm Bot',
-      focus: 'Adaptive arm with inverse kinematics and custom path planner for precise scoring and rapid cycling.',
-      design: '3DOF shoulder-elbow-wrist stack, compliant intake, square-root PID tuning, and quick-swap end effector plates.',
+      name: 'Cosmobots 25679: ITD1 Bot',
+      image: '/images/itd1-bot.jpg',
+      focus: 'Linear extensions + active intakes with multi-DOF outtake driven by inverse kinematics.',
+      design: 'Dual linear extension carriage, active intake with staged transfer, multi-axis outtake tuned with IK for accurate placement under load.',
     },
     {
-      name: 'FTC 8790: Low CG Cycler',
-      focus: 'Low center-of-gravity chassis built for fast cycles and stability under defense.',
-      design: 'Belt-driven lift, wide intake funnel, reinforced drivetrain rails, and optimized weight distribution for acceleration.',
+      name: 'FTC 8790: CS Final Bot',
+      image: '/images/csfinalbot.jpg',
+      focus: 'Slide-powered hang with rail-based transfer and virtual 4-bar intake for fast cycles.',
+      design: 'Telescoping slides for endgame hang, rail-guided transfer channel, virtual 4-bar on intake for controlled approach angles.',
     },
     {
-      name: 'Autonomous Skills Bot',
-      focus: 'Built to maximize autonomous points with reliable sensor fusion and repeatable trajectories.',
-      design: 'AprilTag + IMU fusion, custom spline pathing, and field-oriented drive tuning for tight accuracy tolerances.',
+      name: 'Carolinas Finalist Bot',
+      image: '/images/carolinas-finalist-bot.jpg',
+      focus: 'Carbon-fiber build with efficient intake/transfer/lift tuned for high tele-op scoring.',
+      design: 'CF paneling for stiffness and weight savings, low-latency transfer path, optimized lift gearing for rapid scoring runs.',
     },
     {
-      name: 'Off-Season R&D Prototype',
-      focus: 'Testbed for new actuators and controls before season kickoff.',
-      design: 'Swappable gearbox bays, multi-config superstructure, and telemetry overlays to accelerate iteration.',
+      name: 'Auradcode Bot',
+      image: '/images/auradcode-bot.jpg',
+      focus: 'Carbon-fiber shooter tuned for parabolic trajectories and early-season WR solo auto.',
+      design: 'CF superstructure, flywheel tuning for arc optimization, auto routines focused on consistency and speed.',
     },
   ];
 
@@ -90,7 +94,7 @@ export default function FirstRobotics() {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8 mb-16">
-          <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+        <div className="bg-white rounded-lg shadow-lg overflow-hidden">
             <div className="bg-sky-700 text-white p-6">
               <h2 className="text-3xl font-bold flex items-center gap-3">
                 <Trophy size={32} />
@@ -100,11 +104,8 @@ export default function FirstRobotics() {
             </div>
             <div className="p-6">
               <div className="bg-sky-50 rounded-lg p-4 mb-6">
-                <div className="aspect-video bg-slate-200 rounded flex items-center justify-center">
-                  <div className="text-center">
-                    <Wrench size={64} className="mx-auto mb-2 text-slate-400" />
-                    <p className="text-slate-500">Team 8790 Robot Photo</p>
-                  </div>
+                <div className="aspect-video bg-slate-200 rounded overflow-hidden flex items-center justify-center">
+                  <img src="/images/csfinalbot.jpg" alt="FTC 8790 final robot" className="w-full h-full object-cover" />
                 </div>
               </div>
               <h3 className="text-xl font-bold text-slate-900 mb-4">Achievements</h3>
@@ -129,11 +130,8 @@ export default function FirstRobotics() {
             </div>
             <div className="p-6">
               <div className="bg-blue-50 rounded-lg p-4 mb-6">
-                <div className="aspect-video bg-slate-200 rounded flex items-center justify-center">
-                  <div className="text-center">
-                    <Target size={64} className="mx-auto mb-2 text-slate-400" />
-                    <p className="text-slate-500">Team 25679 Robot Photo</p>
-                  </div>
+                <div className="aspect-video bg-slate-200 rounded overflow-hidden flex items-center justify-center">
+                  <img src="/images/decodehighoprbot.jpg" alt="FTC 25679 Cosmobots robot" className="w-full h-full object-cover" />
                 </div>
               </div>
               <h3 className="text-xl font-bold text-slate-900 mb-4">Role & Contributions</h3>
@@ -175,16 +173,39 @@ export default function FirstRobotics() {
           </div>
         </div>
 
+        <div className="bg-white/95 rounded-lg shadow-xl p-8 border border-sky-100/40 mb-16">
+          <div className="flex items-center justify-between gap-4 flex-wrap mb-6">
+            <h2 className="text-3xl font-bold text-slate-900">Design & Rendering</h2>
+            <p className="text-slate-600 text-sm">Michiana render—CAD + visualization workflow.</p>
+          </div>
+          <div className="grid lg:grid-cols-2 gap-6">
+            <div className="aspect-video bg-slate-200 rounded-lg overflow-hidden">
+              <img src="/images/michianarender.jpg" alt="Michiana render" className="w-full h-full object-cover" />
+            </div>
+            <div className="bg-slate-50 rounded-lg p-6 border border-sky-100/60">
+              <h3 className="text-2xl font-bold text-slate-900 mb-3">CAD + Rendering Skills</h3>
+              <p className="text-slate-700 leading-relaxed mb-3">
+                Built full assemblies with carbon fiber panels, linear extensions, custom gearboxes, and multi-DOF mechanisms, then rendered for sponsor-facing media and design reviews.
+              </p>
+              <ul className="space-y-2 text-slate-700 text-sm">
+                <li>• Fusion 360 multi-body workflows with parametric constraints</li>
+                <li>• CAM-ready layouts and BOM discipline for quick fabrication</li>
+                <li>• Material/lighting setups for clear mechanism visualization</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
         <div className="bg-white/95 rounded-lg shadow-xl p-8 mt-12 border border-sky-100/40">
           <div className="flex items-center justify-between gap-4 flex-wrap mb-6">
             <h2 className="text-3xl font-bold text-slate-900">Robots & Design Notes</h2>
-            <p className="text-slate-600 text-sm">Drop photos for each bot in the placeholders.</p>
+            <p className="text-slate-600 text-sm">Images pull from /public/images/* — drop your photos there.</p>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
-            {robotShowcase.map((robot, index) => (
+            {robotShowcase.map((robot) => (
               <div key={robot.name} className="bg-slate-50 rounded-lg p-6 border border-sky-100/50 flex flex-col gap-4 hover:shadow-lg transition-shadow">
-                <div className="aspect-video rounded-lg bg-slate-200 flex items-center justify-center text-slate-500 text-sm">
-                  Robot Image {index + 1}
+                <div className="aspect-video rounded-lg bg-slate-200 overflow-hidden flex items-center justify-center text-slate-500 text-sm">
+                  <img src={robot.image} alt={robot.name} className="w-full h-full object-cover" />
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-slate-900">{robot.name}</h3>

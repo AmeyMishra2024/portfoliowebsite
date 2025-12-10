@@ -6,6 +6,7 @@ import ScienceOlympiad from './components/ScienceOlympiad';
 import OtherProjects from './components/OtherProjects';
 import Research from './components/Research';
 import Cosmobots from './components/Cosmobots';
+import Programming from './components/Programming';
 import { PageType } from './types';
 
 function App() {
@@ -25,6 +26,8 @@ function App() {
         return <Research />;
       case 'cosmobots':
         return <Cosmobots />;
+      case 'programming':
+        return <Programming />;
       default:
         return <Home />;
     }

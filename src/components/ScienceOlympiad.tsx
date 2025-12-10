@@ -10,7 +10,8 @@ export default function ScienceOlympiad() {
   ];
 
   const stateWins = [
-    { event: 'Storm the Castle', place: '1st Place', year: '8th Grade' },
+    { event: 'Wheeled Vehicle', place: '3rd Place', year: 'State' },
+    { event: 'Solar Power', place: '4th Place', year: 'State' },
   ];
 
   const allMedals = [
@@ -182,14 +183,14 @@ export default function ScienceOlympiad() {
                   </div>
                 ))}
                 <div className="pt-4 border-t border-slate-200">
-                  <h4 className="font-bold text-slate-900 mb-3">Additional Medals</h4>
+                  <h4 className="font-bold text-slate-900 mb-3">State Placements</h4>
                   <div className="flex items-center gap-2 text-sm text-slate-600">
                     <Trophy size={16} className="text-sky-600" />
-                    <span>1x State Gold</span>
+                    <span>3rd: Wheeled Vehicle</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm text-slate-600 mt-1">
                     <Trophy size={16} className="text-blue-600" />
-                    <span>2x State Bronze</span>
+                    <span>4th: Solar Power</span>
                   </div>
                 </div>
               </div>

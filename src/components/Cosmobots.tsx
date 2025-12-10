@@ -79,13 +79,13 @@ export default function Cosmobots() {
       name: 'FTC 25679 The Cosmobots',
       role: 'Founder & Team Captain',
       description: 'Primary competitive team focused on FIRST Tech Challenge competitions',
-      achievements: ['Ranked top 0.5% globally', 'League Championship winners', 'Regional playoff qualifiers'],
+      achievements: ['Ranked top 0.5% globally', 'League Championship winners', 'International Premier finalists'],
     },
     {
       name: 'FTC 8790',
       role: 'Team Captain',
       description: 'Established competitive team with strong regional performance',
-      achievements: ['League finalist', 'Regional runner-up', '3x Connect Award winner'],
+      achievements: ['League finalist', 'Regional runner-up', 'International Premier finalists'],
     },
   ];
 

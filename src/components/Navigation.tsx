@@ -17,6 +17,7 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
     { id: 'other-projects', label: 'Projects' },
     { id: 'research', label: 'Research' },
     { id: 'cosmobots', label: 'Cosmobots' },
+    { id: 'programming', label: 'Programming' },
   ];
 
   const handleNavigate = (page: PageType) => {
