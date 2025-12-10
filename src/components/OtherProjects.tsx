@@ -5,7 +5,7 @@ export default function OtherProjects() {
     {
       title: 'AI Humanoid Robot Research and Development',
       icon: Brain,
-      color: 'from-purple-500 to-indigo-500',
+      color: 'from-sky-700 to-blue-700',
       description:
         'Designed and programmed a humanoid robot that blends physical motion with intelligent behavior. Handled the full stack development including motor control, computer vision, and AI integration.',
       technologies: ['Arduino', 'OpenCV', 'OpenAI API', 'Python', 'C++'],
@@ -20,7 +20,7 @@ export default function OtherProjects() {
     {
       title: 'ORCA - Orbital Recycling and Construction Array',
       icon: Satellite,
-      color: 'from-blue-500 to-cyan-500',
+      color: 'from-blue-700 to-cyan-600',
       description:
         '2025 NASA Global Space Apps Challenge project focused on space debris capture and recycling using advanced neural networks and orbital mechanics.',
       technologies: ['Python', 'TensorFlow', 'CAD Software', 'Orbital Mechanics'],
@@ -35,7 +35,7 @@ export default function OtherProjects() {
     {
       title: 'EcoScape Sustainable Architecture',
       icon: TreePine,
-      color: 'from-green-500 to-emerald-500',
+      color: 'from-slate-800 to-sky-700',
       description:
         'Researched, designed, and planned a sustainable city based on current technologies, analyzing environmental data and ecological issues.',
       technologies: ['Environmental Analysis', 'Urban Planning', 'CAD', 'Data Analytics'],
@@ -50,7 +50,7 @@ export default function OtherProjects() {
     {
       title: 'Radio-Controlled 3D Printed Airplane',
       icon: Plane,
-      color: 'from-orange-500 to-red-500',
+      color: 'from-sky-600 to-blue-500',
       description:
         'CAD designed and 3D printed aircraft for aerodynamics testing and data collection, implementing control surfaces for flight testing.',
       technologies: ['Fusion 360', '3D Printing', 'RC Systems', 'Aerodynamics'],
@@ -65,7 +65,7 @@ export default function OtherProjects() {
     {
       title: '3D Printed Drone for Location Mapping',
       icon: Camera,
-      color: 'from-pink-500 to-rose-500',
+      color: 'from-sky-800 to-cyan-600',
       description:
         'Custom-designed UAV with waypoint navigation capabilities for location mapping and aerial photography.',
       technologies: ['CAD', '3D Printing', 'Python', 'GPS Navigation', 'Computer Vision'],
@@ -80,7 +80,7 @@ export default function OtherProjects() {
     {
       title: 'NASA Exoplanet Analysis with Neural Networks',
       icon: Globe,
-      color: 'from-violet-500 to-purple-500',
+      color: 'from-indigo-700 to-sky-700',
       description:
         'Utilized AI and neural networks to search through NASA exoplanet datasets to identify potential candidates for habitable exoplanets.',
       technologies: ['Python', 'TensorFlow', 'Neural Networks', 'Data Science'],
@@ -95,11 +95,11 @@ export default function OtherProjects() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
-      <section className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-16">
+    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
+      <section className="bg-gradient-to-r from-slate-950 via-sky-900 to-sky-800 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-5xl font-bold mb-4">Projects Portfolio</h1>
-          <p className="text-xl text-indigo-100">
+          <p className="text-xl text-sky-200">
             Personal and academic engineering projects showcasing innovation and technical expertise
           </p>
         </div>
@@ -110,7 +110,7 @@ export default function OtherProjects() {
           {projects.map((project, index) => {
             const Icon = project.icon;
             return (
-              <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+              <div key={index} className="bg-white/95 rounded-lg shadow-xl overflow-hidden hover:shadow-2xl transition-shadow border border-sky-100/40">
                 <div className={`bg-gradient-to-r ${project.color} text-white p-6`}>
                   <div className="flex items-center gap-4">
                     <div className="bg-white/20 p-3 rounded-lg">
@@ -149,7 +149,7 @@ export default function OtherProjects() {
                           {project.technologies.map((tech, techIndex) => (
                             <span
                               key={techIndex}
-                              className="bg-slate-100 px-4 py-2 rounded-full text-sm font-medium text-slate-700"
+                              className="bg-slate-100 px-4 py-2 rounded-full text-sm font-medium text-slate-700 border border-sky-100/60"
                             >
                               {tech}
                             </span>
@@ -162,14 +162,14 @@ export default function OtherProjects() {
                         <ul className="space-y-2">
                           {project.features.map((feature, featureIndex) => (
                             <li key={featureIndex} className="flex items-start gap-2">
-                              <div className="w-2 h-2 bg-indigo-600 rounded-full mt-2 flex-shrink-0" />
+                              <div className="w-2 h-2 bg-sky-600 rounded-full mt-2 flex-shrink-0" />
                               <span className="text-slate-700">{feature}</span>
                             </li>
                           ))}
                         </ul>
                       </div>
 
-                      <div className="bg-indigo-50 rounded-lg p-4">
+                      <div className="bg-sky-50 rounded-lg p-4 border border-sky-100/60">
                         <h3 className="text-lg font-bold text-slate-900 mb-2">Outcomes & Impact</h3>
                         <p className="text-slate-700">{project.outcomes}</p>
                       </div>
@@ -181,7 +181,7 @@ export default function OtherProjects() {
           })}
         </div>
 
-        <div className="mt-16 bg-white rounded-lg shadow-lg p-8">
+        <div className="mt-16 bg-white/95 rounded-lg shadow-xl p-8 border border-sky-100/40">
           <h2 className="text-3xl font-bold text-slate-900 mb-6">Additional Projects Gallery</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[1, 2, 3, 4, 5, 6].map((i) => (

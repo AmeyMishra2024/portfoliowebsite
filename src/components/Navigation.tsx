@@ -26,12 +26,12 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
   };
 
   return (
-    <nav className="bg-slate-900 text-white sticky top-0 z-50 shadow-lg">
+    <nav className="bg-gradient-to-r from-slate-950 via-slate-900 to-sky-900 text-sky-50 sticky top-0 z-50 shadow-lg shadow-sky-900/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <button
             onClick={() => handleNavigate('home')}
-            className="text-xl font-bold hover:text-cyan-400 transition-colors"
+            className="text-xl font-bold tracking-tight hover:text-sky-300 transition-colors"
           >
             Amey Mishra
           </button>
@@ -43,8 +43,8 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
                 onClick={() => handleNavigate(item.id)}
                 className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
                   currentPage === item.id
-                    ? 'bg-cyan-600 text-white'
-                    : 'text-gray-300 hover:bg-slate-800 hover:text-white'
+                    ? 'bg-sky-600 text-white shadow-lg shadow-sky-900/30'
+                    : 'text-sky-100/80 hover:bg-slate-800/70 hover:text-white'
                 }`}
               >
                 {item.label}
@@ -54,7 +54,7 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
 
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 rounded-md hover:bg-slate-800"
+            className="md:hidden p-2 rounded-md hover:bg-slate-800/70"
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -62,7 +62,7 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
       </div>
 
       {mobileMenuOpen && (
-        <div className="md:hidden bg-slate-800">
+        <div className="md:hidden bg-slate-900/90 backdrop-blur">
           <div className="px-2 pt-2 pb-3 space-y-1">
             {navItems.map((item) => (
               <button
@@ -70,8 +70,8 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
                 onClick={() => handleNavigate(item.id)}
                 className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium transition-colors ${
                   currentPage === item.id
-                    ? 'bg-cyan-600 text-white'
-                    : 'text-gray-300 hover:bg-slate-700 hover:text-white'
+                    ? 'bg-sky-600 text-white shadow-md shadow-sky-900/30'
+                    : 'text-sky-100/80 hover:bg-slate-800 hover:text-white'
                 }`}
               >
                 {item.label}

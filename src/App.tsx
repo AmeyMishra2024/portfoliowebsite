@@ -31,12 +31,12 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
       <Navigation currentPage={currentPage} onNavigate={setCurrentPage} />
       <main>{renderPage()}</main>
-      <footer className="bg-slate-900 text-white py-8">
+      <footer className="bg-gradient-to-r from-slate-950 via-slate-900 to-sky-900 text-sky-100 py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-slate-400">
+          <p className="text-sky-200">
             © 2025 Amey Mishra. All rights reserved.
           </p>
         </div>

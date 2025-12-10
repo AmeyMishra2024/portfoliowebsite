@@ -6,25 +6,25 @@ export default function Cosmobots() {
       icon: DollarSign,
       value: '$20,000+',
       label: 'Funding Secured',
-      color: 'from-green-500 to-emerald-500',
+      color: 'from-sky-600 to-blue-600',
     },
     {
       icon: Heart,
       value: '1,000+',
       label: 'Volunteer Hours',
-      color: 'from-red-500 to-pink-500',
+      color: 'from-slate-900 to-sky-800',
     },
     {
       icon: Users,
       value: '2+',
       label: 'Teams Managed',
-      color: 'from-blue-500 to-cyan-500',
+      color: 'from-blue-700 to-cyan-600',
     },
     {
       icon: Rocket,
       value: '350',
       label: 'Personal Hours',
-      color: 'from-purple-500 to-indigo-500',
+      color: 'from-slate-800 to-sky-700',
     },
   ];
 
@@ -90,12 +90,12 @@ export default function Cosmobots() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
-      <section className="bg-gradient-to-r from-sky-600 to-blue-600 text-white py-16">
+    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
+      <section className="bg-gradient-to-r from-slate-950 via-sky-900 to-sky-800 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-5xl font-bold mb-4">Cosmobots Robotics</h1>
-          <p className="text-xl text-sky-100 mb-2">Founder & CEO</p>
-          <p className="text-lg text-sky-100">June 2024 - Present | Houston, TX</p>
+          <p className="text-xl text-sky-200 mb-2">Founder & CEO</p>
+          <p className="text-lg text-sky-200">June 2024 - Present | Houston, TX</p>
         </div>
       </section>
 
@@ -248,7 +248,7 @@ export default function Cosmobots() {
           </div>
         </div>
 
-        <div className="bg-gradient-to-r from-sky-600 to-blue-600 rounded-lg shadow-lg p-8 text-white">
+        <div className="bg-gradient-to-r from-slate-950 via-sky-900 to-sky-700 rounded-lg shadow-2xl shadow-sky-900/40 p-8 text-white">
           <h2 className="text-3xl font-bold mb-4">Looking Forward</h2>
           <p className="text-lg text-sky-100 mb-6">
             Cosmobots Robotics continues to grow, expanding our reach to more communities and providing even more
@@ -259,17 +259,17 @@ export default function Cosmobots() {
             <div className="bg-white/10 rounded-lg p-4">
               <h3 className="text-xl font-bold mb-2">Short-term Goals</h3>
               <ul className="space-y-1 text-sky-100">
-                <li>• Expand to 3 additional schools</li>
-                <li>• Secure $30K in funding for 2025</li>
-                <li>• Launch summer robotics camp</li>
+                <li>- Expand to 3 additional schools</li>
+                <li>- Secure $30K in funding for 2025</li>
+                <li>- Launch summer robotics camp</li>
               </ul>
             </div>
             <div className="bg-white/10 rounded-lg p-4">
               <h3 className="text-xl font-bold mb-2">Long-term Vision</h3>
               <ul className="space-y-1 text-sky-100">
-                <li>• Establish permanent makerspaces</li>
-                <li>• Create scholarship programs</li>
-                <li>• Partner with local universities</li>
+                <li>- Establish permanent makerspaces</li>
+                <li>- Create scholarship programs</li>
+                <li>- Partner with local universities</li>
               </ul>
             </div>
           </div>
@@ -278,3 +278,10 @@ export default function Cosmobots() {
     </div>
   );
 }
+
+
+
+
+
+
+
