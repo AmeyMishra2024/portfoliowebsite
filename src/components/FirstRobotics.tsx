@@ -1,9 +1,10 @@
 import { Trophy, Users, Code, Wrench, Target, Award } from 'lucide-react';
+import type { SyntheticEvent } from 'react';
 
 export default function FirstRobotics() {
   const team8790Achievements = [
     'League Finalist and Regional Runner-up',
-    '3x Connect Award Winner',
+    'International premier event finalists',
     'Regionals Qualifier (3x)',
     'Top 0.5% of over 8,000 global teams',
     'First place in Houston event',
@@ -63,6 +64,14 @@ export default function FirstRobotics() {
     },
   ];
 
+  const placeholderImage = '/images/placeholder.svg';
+
+  const handleImageError = (event: SyntheticEvent<HTMLImageElement>) => {
+    const target = event.currentTarget;
+    target.onerror = null;
+    target.src = placeholderImage;
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
       <section className="bg-gradient-to-r from-slate-950 via-sky-900 to-sky-800 text-white py-16">
@@ -83,8 +92,8 @@ export default function FirstRobotics() {
           </div>
           <div className="bg-gradient-to-br from-sky-600 to-blue-600 text-white rounded-lg shadow-2xl shadow-sky-900/40 p-6 text-center">
             <Award size={48} className="mx-auto mb-3" />
-            <h3 className="text-2xl font-bold mb-2">3x Winner</h3>
-            <p className="text-sky-100">Connect Award</p>
+            <h3 className="text-2xl font-bold mb-2">International Finalists</h3>
+            <p className="text-sky-100">Premier event appearances</p>
           </div>
           <div className="bg-gradient-to-br from-sky-600 to-blue-600 text-white rounded-lg shadow-2xl shadow-sky-900/40 p-6 text-center">
             <Users size={48} className="mx-auto mb-3" />
@@ -94,7 +103,7 @@ export default function FirstRobotics() {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8 mb-16">
-        <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+          <div className="bg-white rounded-lg shadow-lg overflow-hidden">
             <div className="bg-sky-700 text-white p-6">
               <h2 className="text-3xl font-bold flex items-center gap-3">
                 <Trophy size={32} />
@@ -105,7 +114,7 @@ export default function FirstRobotics() {
             <div className="p-6">
               <div className="bg-sky-50 rounded-lg p-4 mb-6">
                 <div className="aspect-video bg-slate-200 rounded overflow-hidden flex items-center justify-center">
-                  <img src="/images/csfinalbot.jpg" alt="FTC 8790 final robot" className="w-full h-full object-cover" />
+                  <img src="/images/csfinalbot.jpg" alt="FTC 8790 final robot" className="w-full h-full object-cover" onError={handleImageError} />
                 </div>
               </div>
               <h3 className="text-xl font-bold text-slate-900 mb-4">Achievements</h3>
@@ -131,7 +140,7 @@ export default function FirstRobotics() {
             <div className="p-6">
               <div className="bg-blue-50 rounded-lg p-4 mb-6">
                 <div className="aspect-video bg-slate-200 rounded overflow-hidden flex items-center justify-center">
-                  <img src="/images/decodehighoprbot.jpg" alt="FTC 25679 Cosmobots robot" className="w-full h-full object-cover" />
+                  <img src="/images/decodehighoprbot.jpg" alt="FTC 25679 Cosmobots robot" className="w-full h-full object-cover" onError={handleImageError} />
                 </div>
               </div>
               <h3 className="text-xl font-bold text-slate-900 mb-4">Role & Contributions</h3>
@@ -180,7 +189,7 @@ export default function FirstRobotics() {
           </div>
           <div className="grid lg:grid-cols-2 gap-6">
             <div className="aspect-video bg-slate-200 rounded-lg overflow-hidden">
-              <img src="/images/michianarender.jpg" alt="Michiana render" className="w-full h-full object-cover" />
+              <img src="/images/michianarender.jpg" alt="Michiana render" className="w-full h-full object-cover" onError={handleImageError} />
             </div>
             <div className="bg-slate-50 rounded-lg p-6 border border-sky-100/60">
               <h3 className="text-2xl font-bold text-slate-900 mb-3">CAD + Rendering Skills</h3>
@@ -205,7 +214,7 @@ export default function FirstRobotics() {
             {robotShowcase.map((robot) => (
               <div key={robot.name} className="bg-slate-50 rounded-lg p-6 border border-sky-100/50 flex flex-col gap-4 hover:shadow-lg transition-shadow">
                 <div className="aspect-video rounded-lg bg-slate-200 overflow-hidden flex items-center justify-center text-slate-500 text-sm">
-                  <img src={robot.image} alt={robot.name} className="w-full h-full object-cover" />
+                  <img src={robot.image} alt={robot.name} className="w-full h-full object-cover" onError={handleImageError} />
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-slate-900">{robot.name}</h3>

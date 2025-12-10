@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="title desc">
+  <title>Image placeholder</title>
+  <desc>Fallback graphic shown while the real competition photo loads.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0ea5e9" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#0b1f3a" stop-opacity="0.95" />
+    </linearGradient>
+    <pattern id="grid" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0 H0 V40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1" />
+    </pattern>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)" />
+  <rect width="800" height="500" fill="url(#grid)" />
+  <g fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="4" stroke-linecap="round">
+    <path d="M150 340 L260 230 L340 310 L450 180 L620 350" />
+    <circle cx="260" cy="230" r="10" />
+    <circle cx="450" cy="180" r="10" />
+    <circle cx="620" cy="350" r="10" />
+  </g>
+  <rect x="120" y="120" width="560" height="260" rx="18" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.2)" />
+  <text x="400" y="250" text-anchor="middle" fill="#e2f3ff" font-family="'Segoe UI', Arial, sans-serif" font-size="32" font-weight="700" letter-spacing="1">
+    Competition photo coming soon
+  </text>
+  <text x="400" y="290" text-anchor="middle" fill="#c2dbef" font-family="'Segoe UI', Arial, sans-serif" font-size="18">
+    Add your image to /public/images
+  </text>
+</svg>

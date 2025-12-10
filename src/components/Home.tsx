@@ -24,7 +24,7 @@ export default function Home() {
   const stats = [
     {
       icon: Award,
-      value: 'Top 0.5%',
+      value: '25679',
       label: 'FTC global ranking (Team 8790)',
     },
     {
