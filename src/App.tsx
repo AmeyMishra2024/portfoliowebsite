@@ -1,4 +1,4 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import Navigation from './components/Navigation';
 import Home from './components/Home';
 import FirstRobotics from './components/FirstRobotics';
@@ -39,7 +39,7 @@ function App() {
       <main>{renderPage()}</main>
       <footer className="bg-gradient-to-r from-white via-slate-100 to-sky-100 text-slate-700 py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-slate-600">Copyright 2025 Amey Mishra. All rights reserved.</p>
+          <p className="text-slate-600">(c) 2025 Amey Mishra. All rights reserved.</p>
         </div>
       </footer>
     </div>
@@ -47,6 +47,3 @@ function App() {
 }
 
 export default App;
-
-
-

@@ -2,6 +2,13 @@ import { Trophy, Users, Code, Award } from 'lucide-react';
 import type { SyntheticEvent } from 'react';
 
 export default function FirstRobotics() {
+  const videos = [
+    { title: '2024 FIRST Season Recap', url: 'https://www.youtube.com/embed/cIjSa_KR5-U' },
+    { title: 'Programmed Autonomous Examples', url: 'https://www.youtube.com/embed/8LldWONLAaE' },
+    { title: 'Autonomous Short Clip', url: 'https://www.youtube.com/embed/WUUOcWo_VNg' },
+    { title: 'Inverse Kinematics Demo', url: 'https://www.youtube.com/embed/Taopk8Zoc3A' },
+  ];
+
   const team8790Achievements = [
     'League finalist and regional runner-up (captain)',
     'Houston Johnson League Championship winning alliance',
@@ -72,35 +79,16 @@ export default function FirstRobotics() {
   ];
 
   const photoGallery = [
-    { title: 'FTC Team Pic', image: '/images/ftc-team.jpg' },
-    { title: 'Page Header Pic', image: '/images/page-header.jpg' },
-    { title: 'FTC League Winner', image: '/images/ftc-league-winner.jpg' },
-    { title: 'Post FTC Finals', image: '/images/post-ftc-finals.jpg' },
-    { title: 'FTC International Alliance Selections', image: '/images/ftc-international-alliance.jpg' },
-    { title: 'Rocket Models (Other Projects)', image: '/images/rocket-models.jpg' },
-    { title: 'SciOly Competition Picture', image: '/images/scioly-competition.jpg' },
-    { title: 'FTC Random Pic', image: '/images/ftc-random.jpg' },
-    { title: 'Premier International Finals FTC', image: '/images/premier-international-finals.jpg' },
-    { title: 'FTC International Finalist Pics', image: '/images/ftc-international-finalist.jpg' },
-    { title: 'Humanoid Bot', image: '/images/humanoid-bot.jpg' },
-    { title: 'Meeting with Astronaut', image: '/images/meeting-with-astronaut.jpg' },
-    { title: 'FTC Rookie Year Pic', image: '/images/ftc-rookie-year.jpg' },
-    { title: 'Battlebot Image 2', image: '/images/battlebot-2.jpg' },
-    { title: 'VEX Bot', image: '/images/vexbot.jpg' },
-    { title: 'Michiana International Elims', image: '/images/michiana-elims.jpg' },
-    { title: 'SciOly Comp Pic 2', image: '/images/scioly-comp-2.jpg' },
-    { title: 'SciOly Tower', image: '/images/scioly-tower.jpg' },
-    { title: 'SciOly Flight', image: '/images/scioly-flight.jpg' },
-    { title: 'Humanoid Robot Arm', image: '/images/humanoid-robot-arm.jpg' },
-    { title: 'Battlebot Image 1', image: '/images/battlebot-1.jpg' },
-    { title: 'Robot Tour', image: '/images/robot-tour.jpg' },
-    { title: 'FTC Regionals Setup Pics', image: '/images/ftc-regionals-setup.jpg' },
-    { title: 'SciOly Comp Pic', image: '/images/scioly-comp.jpg' },
-    { title: 'Drone Regional Champions', image: '/images/drone-regional-champions.jpg' },
-    { title: 'More Rockets', image: '/images/more-rockets.jpg' },
-    { title: 'Rubiks Cube Competition Picture', image: '/images/rubiks-cube-competition.jpg' },
-    { title: 'Electric Vehicle', image: '/images/electric-vehicle.jpg' },
-    { title: 'Electric Car', image: '/images/electric-car.jpg' },
+    { title: 'FTC Team', image: '/images/ftc-team.jpg' },
+    { title: 'Season Header', image: '/images/page-header.jpg' },
+    { title: 'League Winners', image: '/images/ftc-league-winner.jpg' },
+    { title: 'Post Finals', image: '/images/post-ftc-finals.jpg' },
+    { title: 'International Alliance Selections', image: '/images/ftc-international-alliance.jpg' },
+    { title: 'Premier International Finals', image: '/images/premier-international-finals.jpg' },
+    { title: 'International Finalist', image: '/images/ftc-international-finalist.jpg' },
+    { title: 'Rookie Year', image: '/images/ftc-rookie-year.jpg' },
+    { title: 'Regionals Setup', image: '/images/ftc-regionals-setup.jpg' },
+    { title: 'FTC Random', image: '/images/ftc-random.jpg' },
   ];
 
   const placeholderImage = '/images/placeholder.svg';
@@ -116,13 +104,35 @@ export default function FirstRobotics() {
       <section className="bg-gradient-to-r from-white via-sky-100 to-sky-200 text-slate-900 py-16 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-5xl font-bold mb-4">FIRST Tech Challenge</h1>
-          <p className="text-xl text-slate-700">
+          <p className="text-xl text-slate-800">
             Competitive robotics excellence through innovation and teamwork
           </p>
         </div>
       </section>
 
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-12">
+        <div className="bg-white/95 rounded-lg shadow-xl p-8 border border-sky-100/40">
+          <h2 className="text-3xl font-bold text-slate-900 mb-6">Season Videos</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            {videos.map((video) => (
+              <div key={video.title} className="bg-slate-50 rounded-lg border border-slate-200 shadow-sm overflow-hidden">
+                <div className="aspect-video bg-slate-200">
+                  <iframe
+                    className="w-full h-full"
+                    src={video.url}
+                    title={video.title}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
+                <div className="p-4">
+                  <p className="font-semibold text-slate-900">{video.title}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
         <div className="grid md:grid-cols-3 gap-6">
           <div className="bg-gradient-to-br from-sky-100 to-white border border-sky-200 text-slate-900 rounded-lg shadow-lg shadow-sky-100 p-6 text-center">
             <Trophy size={48} className="mx-auto mb-3 text-sky-700" />
@@ -319,4 +329,3 @@ export default function FirstRobotics() {
     </div>
   );
 }
-

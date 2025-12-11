@@ -1,4 +1,5 @@
 import { Award, Building2, Zap, Medal, Trophy } from 'lucide-react';
+import type { SyntheticEvent } from 'react';
 
 export default function ScienceOlympiad() {
   const regionalWins = [
@@ -63,12 +64,28 @@ export default function ScienceOlympiad() {
     },
   ];
 
+  const galleryImages = [
+    { title: 'SciOly Competition', image: '/images/scioly-competition.jpg' },
+    { title: 'SciOly Competition 2', image: '/images/scioly-comp-2.jpg' },
+    { title: 'SciOly Tower', image: '/images/scioly-tower.jpg' },
+    { title: 'SciOly Flight', image: '/images/scioly-flight.jpg' },
+    { title: 'SciOly Competition 3', image: '/images/scioly-comp.jpg' },
+  ];
+
+  const placeholderImage = '/images/placeholder.svg';
+
+  const handleImageError = (event: SyntheticEvent<HTMLImageElement>) => {
+    const target = event.currentTarget;
+    target.onerror = null;
+    target.src = placeholderImage;
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-white via-slate-50 to-sky-50 text-slate-900">
       <section className="bg-gradient-to-r from-white via-sky-100 to-sky-200 text-slate-900 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-5xl font-bold mb-4">Science Olympiad</h1>
-          <p className="text-xl text-slate-700">
+          <p className="text-xl text-slate-800">
             Team President | Engineering Events Specialist
           </p>
         </div>
@@ -98,7 +115,7 @@ export default function ScienceOlympiad() {
           </div>
         </div>
 
-        <div className="bg-white/95 rounded-lg shadow-xl p-8 mb-16 border border-sky-100/40">
+          <div className="bg-white/95 rounded-lg shadow-xl p-8 mb-16 border border-sky-100/40">
           <h2 className="text-3xl font-bold text-slate-900 mb-6">Leadership Role</h2>
           <div className="flex flex-col md:flex-row gap-8 items-start">
             <div className="md:w-1/3">
@@ -220,11 +237,18 @@ export default function ScienceOlympiad() {
         <div className="bg-white rounded-lg shadow-lg p-8">
           <h2 className="text-3xl font-bold text-slate-900 mb-6">Competition Gallery</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[1, 2, 3, 4, 5, 6].map((i) => (
-              <div key={i} className="bg-slate-200 rounded-lg aspect-video flex items-center justify-center hover:bg-slate-300 transition-colors">
-                <div className="text-center">
-                  <Medal size={48} className="mx-auto mb-2 text-slate-400" />
-                  <p className="text-slate-500 text-sm">Event Photo {i}</p>
+            {galleryImages.map((photo) => (
+              <div key={photo.title} className="bg-slate-50 rounded-lg border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                <div className="aspect-video bg-slate-200">
+                  <img
+                    src={photo.image}
+                    alt={photo.title}
+                    className="w-full h-full object-cover"
+                    onError={handleImageError}
+                  />
+                </div>
+                <div className="p-4">
+                  <p className="font-semibold text-slate-900">{photo.title}</p>
                 </div>
               </div>
             ))}

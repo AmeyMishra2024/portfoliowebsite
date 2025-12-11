@@ -14,7 +14,7 @@ export default function Research() {
 
   const researchExperiences = [
     {
-      title: 'NASA Global Space Apps Challenge',
+      title: 'International Space Apps Challenge',
       role: 'Global Nominee',
       period: '2024-2025',
       description: 'Participated in global competition focusing on space-related challenges. Developed ORCA (Orbital Recycling and Construction Array) project.',
@@ -80,7 +80,7 @@ export default function Research() {
       <section className="bg-gradient-to-r from-white via-sky-100 to-sky-200 text-slate-900 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-5xl font-bold mb-4">Research & Development</h1>
-          <p className="text-xl text-sky-200">
+          <p className="text-xl text-slate-800">
             Exploring frontiers in aerospace engineering, AI, and sustainable technologies
           </p>
         </div>
@@ -238,7 +238,7 @@ export default function Research() {
             <div>
               <h3 className="text-xl font-bold mb-2">Collaboration</h3>
               <p className="text-sky-100">
-                Working with NASA programs, university researchers, and industry partners to develop innovative solutions.
+                Working with space programs, university researchers, and industry partners to develop innovative solutions.
               </p>
             </div>
             <div>
@@ -253,4 +253,6 @@ export default function Research() {
     </div>
   );
 }
+
+
 

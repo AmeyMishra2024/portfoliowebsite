@@ -37,7 +37,7 @@ export default function Programming() {
       <section className="bg-gradient-to-r from-white via-sky-100 to-sky-200 text-slate-900 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-5xl font-bold mb-4">Programming</h1>
-          <p className="text-xl text-sky-200">FTC software: autonomy, control, and reliability</p>
+          <p className="text-xl text-slate-800">FTC software: autonomy, control, and reliability</p>
         </div>
       </section>
 
@@ -87,4 +87,5 @@ export default function Programming() {
     </div>
   );
 }
+
 

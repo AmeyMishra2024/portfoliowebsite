@@ -1,4 +1,5 @@
 import { Brain, Satellite, TreePine, Plane, Camera, Globe } from 'lucide-react';
+import type { SyntheticEvent } from 'react';
 
 export default function OtherProjects() {
   const projects = [
@@ -22,7 +23,7 @@ export default function OtherProjects() {
       icon: Satellite,
       color: 'from-blue-700 to-cyan-600',
       description:
-        '2025 NASA Global Space Apps Challenge project focused on space debris capture and recycling using advanced neural networks and orbital mechanics.',
+        '2025 International Space Apps Challenge project focused on space debris capture and recycling using advanced neural networks and orbital mechanics.',
       technologies: ['Python', 'TensorFlow', 'CAD Software', 'Orbital Mechanics'],
       features: [
         'Custom neural network to analyze debris data',
@@ -30,7 +31,8 @@ export default function OtherProjects() {
         'High-level CAD design for capture mechanisms',
         'Comprehensive business plan for real-world implementation',
       ],
-      outcomes: 'NASA Global Space Apps Challenge Global Nominee',
+      outcomes: 'International Space Apps Challenge Global Nominee',
+      video: 'https://www.youtube.com/embed/dITm2Ox0KxU',
     },
     {
       title: 'EcoScape Sustainable Architecture',
@@ -94,12 +96,39 @@ export default function OtherProjects() {
     },
   ];
 
+  const projectVideos = projects
+    .filter((project) => project.video)
+    .map((project) => ({ title: project.title, url: project.video as string }));
+
+  const additionalGallery = [
+    { title: 'Rocket Models', image: '/images/rocket-models.jpg' },
+    { title: 'More Rockets', image: '/images/more-rockets.jpg' },
+    { title: 'Drone Regional Champions', image: '/images/drone-regional-champions.jpg' },
+    { title: 'Electric Vehicle', image: '/images/electric-vehicle.jpg' },
+    { title: 'Electric Car', image: '/images/electric-car.jpg' },
+    { title: 'VEX Bot', image: '/images/vexbot.jpg' },
+    { title: 'Battlebot Image 1', image: '/images/battlebot-1.jpg' },
+    { title: 'Battlebot Image 2', image: '/images/battlebot-2.jpg' },
+    { title: 'Robot Tour', image: '/images/robot-tour.jpg' },
+    { title: 'Meeting with Astronaut', image: '/images/meeting-with-astronaut.jpg' },
+    { title: 'Humanoid Bot', image: '/images/humanoid-bot.jpg' },
+    { title: 'Humanoid Robot Arm', image: '/images/humanoid-robot-arm.jpg' },
+  ];
+
+  const placeholderImage = '/images/placeholder.svg';
+
+  const handleImageError = (event: SyntheticEvent<HTMLImageElement>) => {
+    const target = event.currentTarget;
+    target.onerror = null;
+    target.src = placeholderImage;
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-white via-slate-50 to-sky-50">
       <section className="bg-gradient-to-r from-white via-sky-100 to-sky-200 text-slate-900 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-5xl font-bold mb-4">Projects Portfolio</h1>
-          <p className="text-xl text-sky-200">
+          <p className="text-xl text-slate-800">
             Personal and academic engineering projects showcasing innovation and technical expertise
           </p>
         </div>
@@ -181,14 +210,48 @@ export default function OtherProjects() {
           })}
         </div>
 
+        {projectVideos.length > 0 && (
+          <div className="mt-16 bg-white/95 rounded-lg shadow-xl p-8 border border-sky-100/40">
+            <h2 className="text-3xl font-bold text-slate-900 mb-6">Project Videos</h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              {projectVideos.map((video) => (
+                <div key={video.title} className="bg-slate-50 rounded-lg border border-slate-200 overflow-hidden shadow-sm">
+                  <div className="aspect-video bg-slate-200">
+                    <iframe
+                      className="w-full h-full"
+                      src={video.url}
+                      title={video.title}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  </div>
+                  <div className="p-4">
+                    <p className="font-semibold text-slate-900">{video.title}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
         <div className="mt-16 bg-white/95 rounded-lg shadow-xl p-8 border border-sky-100/40">
           <h2 className="text-3xl font-bold text-slate-900 mb-6">Additional Projects Gallery</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[1, 2, 3, 4, 5, 6].map((i) => (
-              <div key={i} className="bg-slate-200 rounded-lg aspect-video flex items-center justify-center hover:bg-slate-300 transition-colors">
-                <div className="text-center">
-                  <Camera size={48} className="mx-auto mb-2 text-slate-400" />
-                  <p className="text-slate-500 text-sm">Project Image {i}</p>
+            {additionalGallery.map((photo) => (
+              <div
+                key={photo.title}
+                className="bg-slate-50 rounded-lg border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+              >
+                <div className="aspect-video bg-slate-200">
+                  <img
+                    src={photo.image}
+                    alt={photo.title}
+                    className="w-full h-full object-cover"
+                    onError={handleImageError}
+                  />
+                </div>
+                <div className="p-4">
+                  <p className="font-semibold text-slate-900">{photo.title}</p>
                 </div>
               </div>
             ))}
