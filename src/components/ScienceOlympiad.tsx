@@ -64,11 +64,11 @@ export default function ScienceOlympiad() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
-      <section className="bg-gradient-to-r from-slate-950 via-sky-900 to-sky-800 text-white py-16">
+    <div className="min-h-screen bg-gradient-to-br from-white via-slate-50 to-sky-50 text-slate-900">
+      <section className="bg-gradient-to-r from-white via-sky-100 to-sky-200 text-slate-900 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-5xl font-bold mb-4">Science Olympiad</h1>
-          <p className="text-xl text-sky-200">
+          <p className="text-xl text-slate-700">
             Team President | Engineering Events Specialist
           </p>
         </div>
@@ -76,25 +76,25 @@ export default function ScienceOlympiad() {
 
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid md:grid-cols-4 gap-6 mb-16">
-          <div className="bg-gradient-to-br from-sky-600 to-blue-600 text-white rounded-lg shadow-2xl shadow-sky-900/40 p-6 text-center">
+          <div className="bg-gradient-to-br from-sky-100 to-white text-slate-900 border border-sky-200 rounded-lg shadow-lg shadow-sky-100 p-6 text-center">
             <Trophy size={48} className="mx-auto mb-3" />
             <h3 className="text-2xl font-bold mb-2">President</h3>
-            <p className="text-sky-100">2 Years</p>
+            <p className="text-slate-700">2 Years</p>
           </div>
-          <div className="bg-gradient-to-br from-sky-500 to-cyan-500 text-white rounded-lg shadow-2xl shadow-sky-900/40 p-6 text-center">
+          <div className="bg-gradient-to-br from-sky-100 to-white text-slate-900 border border-sky-200 rounded-lg shadow-lg shadow-sky-100 p-6 text-center">
             <Medal size={48} className="mx-auto mb-3" />
             <h3 className="text-2xl font-bold mb-2">7x</h3>
-            <p className="text-sky-100">Regional 1st Place</p>
+            <p className="text-slate-700">Regional 1st Place</p>
           </div>
-          <div className="bg-gradient-to-br from-blue-600 to-sky-500 text-white rounded-lg shadow-2xl shadow-sky-900/40 p-6 text-center">
+          <div className="bg-gradient-to-br from-sky-100 to-white text-slate-900 border border-sky-200 rounded-lg shadow-lg shadow-sky-100 p-6 text-center">
             <Award size={48} className="mx-auto mb-3" />
             <h3 className="text-2xl font-bold mb-2">1x</h3>
-            <p className="text-sky-100">State Gold Medal</p>
+            <p className="text-slate-700">State Gold Medal</p>
           </div>
-          <div className="bg-gradient-to-br from-sky-700 to-blue-700 text-white rounded-lg shadow-2xl shadow-sky-900/40 p-6 text-center">
+          <div className="bg-gradient-to-br from-sky-100 to-white text-slate-900 border border-sky-200 rounded-lg shadow-lg shadow-sky-100 p-6 text-center">
             <Building2 size={48} className="mx-auto mb-3" />
             <h3 className="text-2xl font-bold mb-2">Building</h3>
-            <p className="text-sky-100">Events Specialist</p>
+            <p className="text-slate-700">Events Specialist</p>
           </div>
         </div>
 
@@ -144,8 +144,8 @@ export default function ScienceOlympiad() {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8 mb-16">
-          <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-            <div className="bg-sky-700 text-white p-6">
+          <div className="bg-white rounded-lg shadow-lg overflow-hidden border border-slate-200">
+            <div className="bg-gradient-to-r from-sky-600 to-blue-600 text-white p-6">
               <h2 className="text-2xl font-bold">Regional Championships</h2>
             </div>
             <div className="p-6">
@@ -168,8 +168,8 @@ export default function ScienceOlympiad() {
             </div>
           </div>
 
-          <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-            <div className="bg-blue-700 text-white p-6">
+          <div className="bg-white rounded-lg shadow-lg overflow-hidden border border-slate-200">
+            <div className="bg-gradient-to-r from-blue-600 to-sky-500 text-white p-6">
               <h2 className="text-2xl font-bold">State Championships</h2>
             </div>
             <div className="p-6">
@@ -182,17 +182,6 @@ export default function ScienceOlympiad() {
                     <p className="text-sm text-slate-600">{win.year}</p>
                   </div>
                 ))}
-                <div className="pt-4 border-t border-slate-200">
-                  <h4 className="font-bold text-slate-900 mb-3">State Placements</h4>
-                  <div className="flex items-center gap-2 text-sm text-slate-600">
-                    <Trophy size={16} className="text-sky-600" />
-                    <span>3rd: Wheeled Vehicle</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-slate-600 mt-1">
-                    <Trophy size={16} className="text-blue-600" />
-                    <span>4th: Solar Power</span>
-                  </div>
-                </div>
               </div>
             </div>
           </div>

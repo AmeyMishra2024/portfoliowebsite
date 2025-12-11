@@ -34,14 +34,12 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
+    <div className="min-h-screen bg-gradient-to-br from-white via-slate-100 to-sky-50 text-slate-900">
       <Navigation currentPage={currentPage} onNavigate={setCurrentPage} />
       <main>{renderPage()}</main>
-      <footer className="bg-gradient-to-r from-slate-950 via-slate-900 to-sky-900 text-sky-100 py-10">
+      <footer className="bg-gradient-to-r from-white via-slate-100 to-sky-100 text-slate-700 py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-sky-200">
-            © 2025 Amey Mishra. All rights reserved.
-          </p>
+          <p className="text-slate-600">Copyright 2025 Amey Mishra. All rights reserved.</p>
         </div>
       </footer>
     </div>
@@ -49,3 +47,6 @@ function App() {
 }
 
 export default App;
+
+
+

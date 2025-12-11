@@ -95,8 +95,8 @@ export default function OtherProjects() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
-      <section className="bg-gradient-to-r from-slate-950 via-sky-900 to-sky-800 text-white py-16">
+    <div className="min-h-screen bg-gradient-to-br from-white via-slate-50 to-sky-50">
+      <section className="bg-gradient-to-r from-white via-sky-100 to-sky-200 text-slate-900 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-5xl font-bold mb-4">Projects Portfolio</h1>
           <p className="text-xl text-sky-200">
@@ -198,3 +198,4 @@ export default function OtherProjects() {
     </div>
   );
 }
+

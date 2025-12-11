@@ -76,8 +76,8 @@ export default function Research() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
-      <section className="bg-gradient-to-r from-slate-950 via-sky-900 to-sky-800 text-white py-16">
+    <div className="min-h-screen bg-gradient-to-br from-white via-slate-50 to-sky-50">
+      <section className="bg-gradient-to-r from-white via-sky-100 to-sky-200 text-slate-900 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-5xl font-bold mb-4">Research & Development</h1>
           <p className="text-xl text-sky-200">
@@ -227,7 +227,7 @@ export default function Research() {
           </div>
         </div>
 
-        <div className="mt-16 bg-gradient-to-r from-slate-950 via-sky-900 to-sky-700 rounded-lg shadow-2xl shadow-sky-900/40 p-8 text-white">
+        <div className="mt-16 bg-gradient-to-r from-sky-100 via-sky-50 to-white rounded-lg shadow-2xl shadow-sky-900/40 p-8 text-white">
           <h2 className="text-3xl font-bold mb-4">Research Impact</h2>
           <p className="text-lg text-sky-100 mb-6">
             My research focuses on addressing critical challenges in aerospace engineering and sustainable technologies.
@@ -253,3 +253,4 @@ export default function Research() {
     </div>
   );
 }
+

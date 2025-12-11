@@ -24,8 +24,8 @@ export default function Home() {
   const stats = [
     {
       icon: Award,
-      value: '25679',
-      label: 'FTC global ranking (Team 8790)',
+      value: '0.5%',
+      label: 'Global ranking (FTC 25679)',
     },
     {
       icon: Users,
@@ -73,40 +73,40 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
+    <div className="min-h-screen bg-gradient-to-br from-white via-slate-50 to-sky-50 text-slate-900">
       <section
         ref={heroRef}
-        className="relative overflow-hidden bg-gradient-to-r from-slate-950 via-sky-900 to-sky-800 text-white py-20"
+        className="relative overflow-hidden bg-gradient-to-r from-white via-sky-100 to-sky-200 text-slate-900 py-20"
         style={{
           backgroundImage:
-            'radial-gradient(circle at var(--cursor-x,50%) var(--cursor-y,50%), rgba(56,189,248,0.2), transparent 35%), radial-gradient(circle at 20% 30%, rgba(14,165,233,0.18), transparent 35%), radial-gradient(circle at 80% 20%, rgba(59,130,246,0.16), transparent 35%)',
+            'radial-gradient(circle at var(--cursor-x,50%) var(--cursor-y,50%), rgba(59,130,246,0.14), transparent 35%), radial-gradient(circle at 20% 30%, rgba(56,189,248,0.12), transparent 35%), radial-gradient(circle at 80% 20%, rgba(37,99,235,0.12), transparent 35%)',
         }}
       >
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(1px_1px_at_20%_20%,rgba(255,255,255,0.25),transparent),radial-gradient(1px_1px_at_80%_30%,rgba(255,255,255,0.15),transparent),radial-gradient(1px_1px_at_50%_70%,rgba(255,255,255,0.2),transparent)] opacity-60" />
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_10%_10%,rgba(186,230,253,0.1),transparent_25%),radial-gradient(circle_at_90%_20%,rgba(59,130,246,0.08),transparent_25%)] animate-pulse" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(1px_1px_at_20%_20%,rgba(59,130,246,0.4),transparent),radial-gradient(1px_1px_at_80%_30%,rgba(14,165,233,0.25),transparent),radial-gradient(1px_1px_at_50%_70%,rgba(14,165,233,0.3),transparent)] opacity-50" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_10%_10%,rgba(186,230,253,0.35),transparent_25%),radial-gradient(circle_at_90%_20%,rgba(59,130,246,0.22),transparent_25%)] animate-pulse" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-5xl md:text-6xl font-bold mb-4 tracking-tight">
                 Amey Mishra
               </h1>
-              <p className="text-2xl text-sky-300 mb-6">
+              <p className="text-2xl text-sky-700 mb-6">
                 Aerospace, robotics, and community-centered engineering
               </p>
-              <p className="text-lg text-sky-100/90 leading-relaxed mb-6">
+              <p className="text-lg text-slate-700 leading-relaxed mb-6">
                 Student engineer blending aerospace ambition with hands-on robotics leadership. I build teams,
                 secure resources, and design hardware/software systems that compete nationally while expanding STEM
                 access in Houston.
               </p>
-              <div className="bg-white/10 border border-sky-500/30 rounded-xl p-6 mb-8 backdrop-blur">
-                <div className="flex items-center gap-2 text-sky-100 font-semibold mb-3">
-                  <Sparkles size={18} className="text-sky-300" />
+              <div className="bg-white/70 border border-sky-200 rounded-xl p-6 mb-8 backdrop-blur shadow-md">
+                <div className="flex items-center gap-2 text-slate-800 font-semibold mb-3">
+                  <Sparkles size={18} className="text-sky-600" />
                   <span>Quick summary</span>
                 </div>
-                <ul className="space-y-2 text-sky-100">
+                <ul className="space-y-2 text-slate-700">
                   {summaryHighlights.map((item, index) => (
                     <li key={index} className="flex gap-2">
-                      <div className="mt-1 h-2 w-2 rounded-full bg-sky-300 flex-shrink-0" />
+                      <div className="mt-1 h-2 w-2 rounded-full bg-sky-500 flex-shrink-0" />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -115,7 +115,7 @@ export default function Home() {
               <div className="flex flex-wrap gap-4">
                 <a
                   href="mailto:amey.mishra2020@gmail.com"
-                  className="flex items-center gap-2 bg-sky-500 hover:bg-sky-400 text-slate-950 px-6 py-3 rounded-lg transition-colors font-semibold shadow-lg shadow-sky-900/30"
+                  className="flex items-center gap-2 bg-sky-600 hover:bg-sky-500 text-white px-6 py-3 rounded-lg transition-colors font-semibold shadow-lg shadow-sky-200/60"
                 >
                   <Mail size={20} />
                   Contact Me
@@ -130,13 +130,13 @@ export default function Home() {
                   LinkedIn
                 </a>
               </div>
-            </div>
+              </div>
 
             <div className="relative">
-              <div className="bg-slate-900/60 border border-sky-800/50 rounded-lg aspect-square flex items-center justify-center shadow-2xl shadow-sky-900/50">
+              <div className="bg-white/80 border border-sky-200 rounded-lg aspect-square flex items-center justify-center shadow-2xl shadow-sky-100">
                 <div className="text-center p-8">
-                  <Rocket size={120} className="mx-auto mb-4 text-sky-300" />
-                  <p className="text-sky-200/80">Professional Photo Placeholder</p>
+                  <Rocket size={120} className="mx-auto mb-4 text-sky-500" />
+                  <p className="text-slate-600">Professional Photo Placeholder</p>
                 </div>
               </div>
             </div>
@@ -149,10 +149,10 @@ export default function Home() {
           {stats.map((stat, index) => {
             const Icon = stat.icon;
             return (
-              <div key={index} className="bg-gradient-to-br from-sky-600 to-blue-600 rounded-xl shadow-2xl shadow-sky-900/40 p-6 text-center hover:shadow-blue-900/50 transition-shadow">
-                <Icon className="mx-auto mb-4 text-white" size={48} />
-                <h3 className="text-3xl font-bold text-white mb-2">{stat.value}</h3>
-                <p className="text-sky-100">{stat.label}</p>
+              <div key={index} className="bg-gradient-to-br from-sky-100 to-white border border-sky-200 rounded-xl shadow-lg shadow-sky-100/60 p-6 text-center hover:shadow-sky-200 transition-shadow">
+                <Icon className="mx-auto mb-4 text-sky-700" size={48} />
+                <h3 className="text-3xl font-bold text-slate-900 mb-2">{stat.value}</h3>
+                <p className="text-slate-700">{stat.label}</p>
               </div>
             );
           })}
