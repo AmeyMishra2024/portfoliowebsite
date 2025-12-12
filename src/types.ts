@@ -5,4 +5,5 @@ export type PageType =
   | 'other-projects'
   | 'research'
   | 'cosmobots'
-  | 'programming';
+  | 'programming'
+  | 'drone';

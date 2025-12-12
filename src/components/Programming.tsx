@@ -1,4 +1,5 @@
 import { Brain, GitBranch, Network, Code2, Gauge, Sparkles } from 'lucide-react';
+import type { SyntheticEvent } from 'react';
 
 export default function Programming() {
   const highlights = [
@@ -23,6 +24,20 @@ export default function Programming() {
       icon: Code2,
     },
   ];
+
+  const droneShowcase = [
+    { title: 'Drone Regional Champions', image: '/images/drone-regional-champions.jpg' },
+    { title: 'Electric Vehicle', image: '/images/electric-vehicle.jpg' },
+    { title: 'Electric Car', image: '/images/electric-car.jpg' },
+  ];
+
+  const placeholderImage = '/images/placeholder.svg';
+
+  const handleImageError = (event: SyntheticEvent<HTMLImageElement>) => {
+    const target = event.currentTarget;
+    target.onerror = null;
+    target.src = placeholderImage;
+  };
 
   const tools = [
     'Road Runner pathing + custom spline planners',
@@ -83,9 +98,36 @@ export default function Programming() {
             Building reliable autonomous + tele-op assists by combining IK-driven motion with adaptive control loops and telemetry-driven iteration. Emphasis on fast tuning cycles, robust sensing, and reusable libraries that move from prototype to competition quickly.
           </p>
         </div>
+
+        <div className="bg-white/95 rounded-lg shadow-xl p-8 border border-sky-100/40">
+          <div className="flex items-center gap-3 mb-4">
+            <Sparkles className="text-sky-700" />
+            <h2 className="text-3xl font-bold text-slate-900">Drone Programming & Autonomy</h2>
+          </div>
+          <p className="text-slate-800 mb-6">
+            Python-based flight stacks, sensor fusion (IMU + optical flow), and waypoint navigation tuned for RADC competitions and field demos.
+          </p>
+          <div className="grid md:grid-cols-3 gap-6">
+            {droneShowcase.map((photo) => (
+              <div key={photo.title} className="bg-slate-50 rounded-lg border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                <div className="aspect-video bg-slate-200">
+                  <img
+                    src={photo.image}
+                    alt={photo.title}
+                    className="w-full h-full object-cover"
+                    onError={handleImageError}
+                  />
+                </div>
+                <div className="p-4">
+                  <p className="font-semibold text-slate-900">{photo.title}</p>
+                  <p className="text-slate-700 text-sm mt-1">Autonomy, navigation, and reliability testing.</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
     </div>
   );
 }
-
 

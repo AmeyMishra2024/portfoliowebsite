@@ -1,7 +1,15 @@
 import { Mail, Phone, Linkedin, MapPin, Award, Rocket, Users, Sparkles, HandCoins } from 'lucide-react';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, type SyntheticEvent } from 'react';
 
 export default function Home() {
+  const placeholderImage = '/images/placeholder.svg';
+
+  const handleImageError = (event: SyntheticEvent<HTMLImageElement>) => {
+    const target = event.currentTarget;
+    target.onerror = null;
+    target.src = placeholderImage;
+  };
+
   const skills = [
     'Team Leadership',
     'Project Management',
@@ -133,11 +141,13 @@ export default function Home() {
               </div>
 
             <div className="relative">
-              <div className="bg-white/80 border border-sky-200 rounded-lg aspect-square flex items-center justify-center shadow-2xl shadow-sky-100">
-                <div className="text-center p-8">
-                  <Rocket size={120} className="mx-auto mb-4 text-sky-500" />
-                  <p className="text-slate-600">Professional Photo Placeholder</p>
-                </div>
+              <div className="bg-white/80 border border-sky-200 rounded-lg aspect-square flex items-center justify-center shadow-2xl shadow-sky-100 overflow-hidden">
+                <img
+                  src="/images/main-hero.jpg"
+                  alt="Amey Mishra FTC 25679"
+                  className="w-full h-full object-cover"
+                  onError={handleImageError}
+                />
               </div>
             </div>
           </div>

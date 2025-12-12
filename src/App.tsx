@@ -7,6 +7,7 @@ import OtherProjects from './components/OtherProjects';
 import Research from './components/Research';
 import Cosmobots from './components/Cosmobots';
 import Programming from './components/Programming';
+import Drone from './components/Drone';
 import { PageType } from './types';
 
 function App() {
@@ -28,6 +29,8 @@ function App() {
         return <Cosmobots />;
       case 'programming':
         return <Programming />;
+      case 'drone':
+        return <Drone />;
       default:
         return <Home />;
     }
