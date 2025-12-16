@@ -122,7 +122,7 @@ export default function Home() {
               </div>
               <div className="flex flex-wrap gap-4">
                 <a
-                  href="mailto:amey.mishra2020@gmail.com"
+                  href="mailto:amey.mishra2025@gmail.com"
                   className="flex items-center gap-2 bg-sky-600 hover:bg-sky-500 text-white px-6 py-3 rounded-lg transition-colors font-semibold shadow-lg shadow-sky-200/60"
                 >
                   <Mail size={20} />
@@ -206,8 +206,8 @@ export default function Home() {
               <Mail className="text-sky-600 flex-shrink-0" size={24} />
               <div>
                 <p className="text-sm text-gray-600">Email</p>
-                <a href="mailto:amey.mishra2020@gmail.com" className="text-slate-900 hover:text-sky-600">
-                  amey.mishra2020@gmail.com
+                <a href="mailto:amey.mishra2025@gmail.com" className="text-slate-900 hover:text-sky-600">
+                  amey.mishra2025@gmail.com
                 </a>
               </div>
             </div>

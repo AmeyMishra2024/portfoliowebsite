@@ -250,23 +250,6 @@ export default function FirstRobotics() {
         </div>
 
         <div className="bg-white/95 rounded-lg shadow-xl p-8 border border-sky-100/40">
-          <h2 className="text-3xl font-bold text-slate-900 mb-6">Competition Gallery</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[1, 2, 3, 4, 5, 6].map((i) => (
-              <div
-                key={i}
-                className="bg-slate-200 rounded-lg aspect-video flex items-center justify-center hover:bg-slate-300 transition-colors text-slate-600"
-              >
-                <div className="text-center">
-                  <Trophy size={48} className="mx-auto mb-2 text-slate-400" />
-                  <p className="text-slate-600 text-sm">Competition Photo {i}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="bg-white/95 rounded-lg shadow-xl p-8 border border-sky-100/40">
           <div className="flex items-center justify-between gap-4 flex-wrap mb-6">
             <h2 className="text-3xl font-bold text-slate-900">Design & Rendering</h2>
             <p className="text-slate-600 text-sm">Michiana render - CAD + visualization workflow.</p>

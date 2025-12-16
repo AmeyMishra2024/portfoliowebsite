@@ -10,15 +10,16 @@ interface NavigationProps {
 export default function Navigation({ currentPage, onNavigate }: NavigationProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const navItems: { id: PageType; label: string }[] = [
+  const navItems: { id: PageType | 'resume'; label: string; href?: string }[] = [
     { id: 'home', label: 'Home' },
     { id: 'first-robotics', label: 'FIRST Robotics' },
+    { id: 'drone', label: 'Drone' },
     { id: 'science-olympiad', label: 'Science Olympiad' },
     { id: 'other-projects', label: 'Projects' },
     { id: 'research', label: 'Research' },
     { id: 'cosmobots', label: 'Cosmobots' },
-    { id: 'programming', label: 'Programming' },
-    { id: 'drone', label: 'Drone' },
+    { id: 'cs-experience', label: 'CS Experience' },
+    { id: 'resume', label: 'Download Resume', href: '/resume.pdf' },
   ];
 
   const handleNavigate = (page: PageType) => {
@@ -39,19 +40,32 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
           </button>
 
           <div className="hidden md:flex space-x-1">
-            {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => handleNavigate(item.id)}
-                className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
-                  currentPage === item.id
-                    ? 'bg-sky-600 text-white shadow-lg shadow-sky-200/40'
-                    : 'text-slate-700 hover:bg-sky-100 hover:text-slate-900'
-                }`}
-              >
-                {item.label}
-              </button>
-            ))}
+            {navItems.map((item) =>
+              item.id === 'resume' ? (
+                <a
+                  key={item.id}
+                  href={item.href}
+                  className="px-4 py-2 rounded-md text-sm font-medium transition-colors text-slate-700 hover:bg-sky-100 hover:text-slate-900 border border-slate-200"
+                  download
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <button
+                  key={item.id}
+                  onClick={() => handleNavigate(item.id as PageType)}
+                  className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                    currentPage === item.id
+                      ? 'bg-sky-600 text-white shadow-lg shadow-sky-200/40'
+                      : 'text-slate-700 hover:bg-sky-100 hover:text-slate-900'
+                  }`}
+                >
+                  {item.label}
+                </button>
+              )
+            )}
           </div>
 
           <button
@@ -66,19 +80,32 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
       {mobileMenuOpen && (
         <div className="md:hidden bg-white/95 backdrop-blur border-t border-slate-200 shadow-lg">
           <div className="px-2 pt-2 pb-3 space-y-1">
-            {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => handleNavigate(item.id)}
-                className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium transition-colors ${
-                  currentPage === item.id
-                    ? 'bg-sky-600 text-white shadow-md shadow-sky-200/40'
-                    : 'text-slate-700 hover:bg-sky-100 hover:text-slate-900'
-                }`}
-              >
-                {item.label}
-              </button>
-            ))}
+            {navItems.map((item) =>
+              item.id === 'resume' ? (
+                <a
+                  key={item.id}
+                  href={item.href}
+                  className="block w-full text-left px-3 py-2 rounded-md text-base font-medium transition-colors text-slate-700 hover:bg-sky-100 hover:text-slate-900 border border-slate-200"
+                  download
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <button
+                  key={item.id}
+                  onClick={() => handleNavigate(item.id as PageType)}
+                  className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium transition-colors ${
+                    currentPage === item.id
+                      ? 'bg-sky-600 text-white shadow-md shadow-sky-200/40'
+                      : 'text-slate-700 hover:bg-sky-100 hover:text-slate-900'
+                  }`}
+                >
+                  {item.label}
+                </button>
+              )
+            )}
           </div>
         </div>
       )}

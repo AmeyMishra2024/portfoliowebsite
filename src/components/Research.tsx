@@ -7,8 +7,9 @@ export default function Research() {
       journal: 'American Journal of Student Research',
       status: 'Published',
       year: '2024',
-      description: 'Comprehensive research on space debris, analyzing their trajectories, impact on orbital operations, and potential mitigation strategies.',
+      description: 'Comprehensive research on space debris, analyzing their trajectories, impact on orbital operations, and potential mitigation strategies. Published with an emphasis on actionable mitigation informed by orbital mechanics and sensor coverage models.',
       topics: ['Orbital Mechanics', 'Space Sustainability', 'Debris Mitigation', 'Environmental Impact'],
+      doi: 'https://doi.org/10.70251/HYJR2348.34247252',
     },
   ];
 
@@ -121,7 +122,19 @@ export default function Research() {
                   <p className="text-slate-600 mt-1">{pub.year}</p>
                 </div>
               </div>
-              <p className="text-slate-700 mb-4">{pub.description}</p>
+              <p className="text-slate-700 mb-4">
+                {pub.description}{' '}
+                {pub.doi && (
+                  <a
+                    href={pub.doi}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sky-700 font-semibold underline-offset-4 hover:underline"
+                  >
+                    DOI link
+                  </a>
+                )}
+              </p>
               <div className="flex flex-wrap gap-2">
                 {pub.topics.map((topic, topicIndex) => (
                   <span
@@ -213,37 +226,23 @@ export default function Research() {
           </div>
         </div>
 
-        <div className="bg-white/95 rounded-lg shadow-xl p-8 border border-sky-100/40">
-          <h2 className="text-3xl font-bold text-slate-900 mb-6">Research Gallery</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[1, 2, 3, 4, 5, 6].map((i) => (
-              <div key={i} className="bg-slate-200 rounded-lg aspect-video flex items-center justify-center hover:bg-slate-300 transition-colors">
-                <div className="text-center">
-                  <Microscope size={48} className="mx-auto mb-2 text-slate-400" />
-                  <p className="text-slate-500 text-sm">Research Image {i}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="mt-16 bg-gradient-to-r from-sky-100 via-sky-50 to-white rounded-lg shadow-2xl shadow-sky-900/40 p-8 text-white">
+        <div className="mt-16 bg-gradient-to-r from-sky-50 via-white to-slate-100 rounded-lg shadow-2xl shadow-sky-900/20 p-8 text-slate-900 border border-sky-100/60">
           <h2 className="text-3xl font-bold mb-4">Research Impact</h2>
-          <p className="text-lg text-sky-100 mb-6">
+          <p className="text-lg text-slate-800 mb-6">
             My research focuses on addressing critical challenges in aerospace engineering and sustainable technologies.
             Through publications, competitions, and hands-on projects, I strive to contribute meaningful solutions to
             real-world problems while advancing scientific knowledge.
           </p>
           <div className="grid md:grid-cols-2 gap-6">
             <div>
-              <h3 className="text-xl font-bold mb-2">Collaboration</h3>
-              <p className="text-sky-100">
+              <h3 className="text-xl font-bold mb-2 text-slate-900">Collaboration</h3>
+              <p className="text-slate-800">
                 Working with space programs, university researchers, and industry partners to develop innovative solutions.
               </p>
             </div>
             <div>
-              <h3 className="text-xl font-bold mb-2">Future Goals</h3>
-              <p className="text-sky-100">
+              <h3 className="text-xl font-bold mb-2 text-slate-900">Future Goals</h3>
+              <p className="text-slate-800">
                 Continue research in aerospace engineering, focusing on space sustainability and advanced propulsion systems.
               </p>
             </div>
@@ -253,6 +252,3 @@ export default function Research() {
     </div>
   );
 }
-
-
-

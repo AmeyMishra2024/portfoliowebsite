@@ -11,6 +11,7 @@ export default function ScienceOlympiad() {
   ];
 
   const stateWins = [
+    { event: 'Storm the Castle', place: '1st Place', year: 'State' },
     { event: 'Wheeled Vehicle', place: '3rd Place', year: 'State' },
     { event: 'Solar Power', place: '4th Place', year: 'State' },
   ];
@@ -46,30 +47,29 @@ export default function ScienceOlympiad() {
       name: 'Tower',
       years: '9th & 10th Grade',
       highlight: 'Lightweight truss geometry tuned for max efficiency; optimized glue joints via test rigs.',
+      link: 'https://sites.google.com/harmonytx.org/stem-sos-science-olympiad-towe/home',
+      image: '/images/electric-vehicle.jpg',
     },
     {
-      name: 'Air Trajectory',
+      name: 'Trajectory',
       years: '9th & 10th Grade',
       highlight: 'Consistent launch using calibrated spring constants and iterative angle/payload testing.',
+      link: 'https://sites.google.com/harmonytx.org/scienceolympiadtrajectory/home',
+      image: '/images/electric-vehicle.jpg',
     },
     {
-      name: 'Helicopter',
-      years: '10th Grade',
+      name: 'Flight',
+      years: '9th Grade',
       highlight: 'Dual-rotor rubber-powered design focusing on lift duration and balanced mass distribution.',
+      link: 'https://sites.google.com/harmonytx.org/scienceolympiadflight/home',
+      image: '/images/electric-vehicle.jpg',
     },
     {
       name: 'Electric Vehicle',
       years: '10th Grade',
       highlight: 'Precision timing with encoder feedback and friction-managed wheelbase for straight runs.',
+      image: '/images/electric-vehicle.jpg',
     },
-  ];
-
-  const galleryImages = [
-    { title: 'SciOly Competition', image: '/images/scioly-competition.jpg' },
-    { title: 'SciOly Competition 2', image: '/images/scioly-comp-2.jpg' },
-    { title: 'SciOly Tower', image: '/images/scioly-tower.jpg' },
-    { title: 'SciOly Flight', image: '/images/scioly-flight.jpg' },
-    { title: 'SciOly Competition 3', image: '/images/scioly-comp.jpg' },
   ];
 
   const placeholderImage = '/images/placeholder.svg';
@@ -134,7 +134,8 @@ export default function ScienceOlympiad() {
               </h3>
               <p className="text-slate-700 mb-4">
                 Led the Harmony Science Olympiad team for two consecutive years (9th & 10th grade),
-                overseeing team strategy, member development, and competition preparation.
+                overseeing game analysis, build validation checklists, and competition readiness while mentoring
+                rookies on safe fabrication workflows.
               </p>
               <div className="space-y-3">
                 <div className="flex items-start gap-2">
@@ -234,45 +235,56 @@ export default function ScienceOlympiad() {
           </div>
         </div>
 
-        <div className="bg-white rounded-lg shadow-lg p-8">
-          <h2 className="text-3xl font-bold text-slate-900 mb-6">Competition Gallery</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {galleryImages.map((photo) => (
-              <div key={photo.title} className="bg-slate-50 rounded-lg border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-                <div className="aspect-video bg-slate-200">
-                  <img
-                    src={photo.image}
-                    alt={photo.title}
-                    className="w-full h-full object-cover"
-                    onError={handleImageError}
-                  />
-                </div>
-                <div className="p-4">
-                  <p className="font-semibold text-slate-900">{photo.title}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
         <div className="bg-white/95 rounded-lg shadow-xl p-8 mt-12 border border-sky-100/40">
           <div className="flex items-center justify-between gap-4 flex-wrap mb-6">
             <h2 className="text-3xl font-bold text-slate-900">Event Builds</h2>
-            <p className="text-slate-600 text-sm">Add photos for each build in the placeholders.</p>
+            <p className="text-slate-600 text-sm">Linked build logs and testing highlights.</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {eventShowcase.map((event, index) => (
-              <div key={event.name} className="bg-slate-50 rounded-lg p-5 border border-sky-100/50 hover:shadow-lg transition-shadow flex flex-col gap-3">
-                <div className="aspect-square bg-slate-200 rounded-lg flex items-center justify-center text-slate-500 text-sm">
-                  Event Image {index + 1}
+            {eventShowcase.map((event) =>
+              event.link ? (
+                <a
+                  key={event.name}
+                  href={event.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-slate-50 rounded-lg p-5 border border-sky-100/50 hover:shadow-lg transition-shadow flex flex-col gap-3"
+                >
+                  <div className="aspect-square bg-slate-200 rounded-lg overflow-hidden">
+                    <img
+                      src={event.image}
+                      alt={`${event.name} build`}
+                      className="w-full h-full object-cover"
+                      onError={handleImageError}
+                    />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-slate-900">{event.name}</h3>
+                    <p className="text-slate-600 text-sm">{event.years}</p>
+                  </div>
+                  <p className="text-slate-700 text-sm leading-relaxed">{event.highlight}</p>
+                </a>
+              ) : (
+                <div
+                  key={event.name}
+                  className="bg-slate-50 rounded-lg p-5 border border-sky-100/50 hover:shadow-lg transition-shadow flex flex-col gap-3"
+                >
+                  <div className="aspect-square bg-slate-200 rounded-lg overflow-hidden">
+                    <img
+                      src={event.image}
+                      alt={`${event.name} build`}
+                      className="w-full h-full object-cover"
+                      onError={handleImageError}
+                    />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-slate-900">{event.name}</h3>
+                    <p className="text-slate-600 text-sm">{event.years}</p>
+                  </div>
+                  <p className="text-slate-700 text-sm leading-relaxed">{event.highlight}</p>
                 </div>
-                <div>
-                  <h3 className="text-xl font-bold text-slate-900">{event.name}</h3>
-                  <p className="text-slate-600 text-sm">{event.years}</p>
-                </div>
-                <p className="text-slate-700 text-sm leading-relaxed">{event.highlight}</p>
-              </div>
-            ))}
+              )
+            )}
           </div>
         </div>
       </section>

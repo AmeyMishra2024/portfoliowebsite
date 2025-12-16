@@ -27,7 +27,7 @@ function App() {
         return <Research />;
       case 'cosmobots':
         return <Cosmobots />;
-      case 'programming':
+      case 'cs-experience':
         return <Programming />;
       case 'drone':
         return <Drone />;

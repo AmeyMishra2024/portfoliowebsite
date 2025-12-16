@@ -1,6 +1,9 @@
 import { Users, DollarSign, Heart, Rocket, Award, Target } from 'lucide-react';
 
 export default function Cosmobots() {
+  const teamSiteLink =
+    'https://sites.google.com/d/1Hadu3TdUw9_hliONlm7TmsH-GP5G60U6/p/1We2B4N7u3Sd1w5XnVvWt51gqpUO7Bjyo/edit';
+
   const achievements = [
     {
       icon: DollarSign,
@@ -10,13 +13,13 @@ export default function Cosmobots() {
     },
     {
       icon: Heart,
-      value: '1,000+',
-      label: 'Volunteer Hours',
+      value: '1,200+',
+      label: 'Volunteer Hours (team-wide)',
       color: 'from-sky-500 to-blue-500',
     },
     {
       icon: Users,
-      value: '2+',
+      value: '3+',
       label: 'Teams Managed',
       color: 'from-sky-400 to-blue-500',
     },
@@ -31,22 +34,26 @@ export default function Cosmobots() {
   const responsibilities = [
     {
       title: 'Community Outreach',
-      description: 'Directed programs to increase STEM opportunities in underrepresented areas, bringing robotics education to underserved communities.',
+      description:
+        'Directed programs to increase STEM opportunities in underrepresented areas, running camps and school visits that scaled FTC/FLL participation.',
       icon: Users,
     },
     {
       title: 'Team Management',
-      description: 'Managed two robotics teams along with various STEM competition teams, coordinating schedules, resources, and strategies.',
+      description:
+        'Managed multiple robotics teams and mentors, coordinating build sprints, scrimmages, and scouting coverage for regional and international events.',
       icon: Target,
     },
     {
       title: 'Fundraising',
-      description: 'Secured over $20,000 in funding for diverse teams within the organization through grants, sponsorships, and community partnerships.',
+      description:
+        'Secured over $20,000 in grants and sponsorships while building sponsor-ready reporting, demos, and media assets.',
       icon: DollarSign,
     },
     {
       title: 'Program Development',
-      description: 'Developed and implemented educational programs, workshops, and training sessions for students of all skill levels.',
+      description:
+        'Developed workshops for CAD, controls, and pit operations; built onboarding docs so new students can contribute within weeks.',
       icon: Rocket,
     },
   ];
@@ -77,9 +84,14 @@ export default function Cosmobots() {
   const teams = [
     {
       name: 'FTC 25679 The Cosmobots',
-      role: 'Founder & Team Captain',
-      description: 'Primary competitive team focused on FIRST Tech Challenge competitions',
-      achievements: ['Ranked top 0.5% globally', 'League Championship winners', 'International Premier finalists'],
+      role: 'Founder, Team Captain, Mechanical Lead',
+      description:
+        'Primary competitive team focused on FIRST Tech Challenge competitions with top-tier global performance and international premier invitations.',
+      achievements: [
+        'Top 0.5% global ranking and international premier finalist',
+        'League Championship winners and regional playoff runs',
+        'Software stack with IK-driven outtake, auton libraries, and telemetry overlays',
+      ],
     },
     {
       name: 'FTC 8790',
@@ -94,8 +106,18 @@ export default function Cosmobots() {
       <section className="bg-gradient-to-r from-white via-sky-100 to-sky-200 text-slate-900 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-5xl font-bold mb-4">Cosmobots Robotics</h1>
-          <p className="text-xl text-slate-700 mb-2">Founder & CEO</p>
+          <p className="text-xl text-slate-700 mb-2">Founder, Captain, and Mechanical Lead</p>
           <p className="text-lg text-slate-700">June 2024 - Present | Houston, TX</p>
+          <div className="mt-4">
+            <a
+              href={teamSiteLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-sky-600 text-white px-5 py-2 rounded-lg shadow hover:bg-sky-500 transition-colors"
+            >
+              Visit Team Site
+            </a>
+          </div>
         </div>
       </section>
 
@@ -107,11 +129,13 @@ export default function Cosmobots() {
               <p className="text-lg text-slate-700 mb-4 leading-relaxed">
                 Cosmobots Robotics is a nonprofit organization dedicated to providing STEM education and robotics
                 opportunities to students in underrepresented communities. Our mission is to inspire the next
-                generation of engineers, scientists, and innovators through hands-on learning experiences.
+                generation of engineers, scientists, and innovators through hands-on learning experiences while
+                competing at the highest FTC levels.
               </p>
               <p className="text-lg text-slate-700 leading-relaxed">
-                As Founder and CEO, I oversee all operations, from team management and fundraising to community
-                outreach and program development, ensuring that every student has access to quality STEM education.
+                As Founder and Captain, I oversee strategy, mechanical design reviews, control software, fundraising,
+                and community outreach. I run build sprints, code reviews, and scrimmage prep so drive teams have
+                reliable robots heading into eliminations and premier events.
               </p>
             </div>
             <div className="bg-slate-200 rounded-lg aspect-video flex items-center justify-center">
@@ -119,6 +143,24 @@ export default function Cosmobots() {
                 <Rocket size={64} className="mx-auto mb-2 text-slate-400" />
                 <p className="text-slate-500">Organization Photo</p>
               </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-white rounded-lg shadow-lg p-8 mb-16 border border-sky-100/60">
+          <h2 className="text-3xl font-bold text-slate-900 mb-6">Competitive Profile</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="bg-slate-50 rounded-lg p-4 border border-slate-200">
+              <p className="text-lg font-semibold text-slate-900">Global Ranking</p>
+              <p className="text-slate-700">Top 0.5% with premier international finalist appearances</p>
+            </div>
+            <div className="bg-slate-50 rounded-lg p-4 border border-slate-200">
+              <p className="text-lg font-semibold text-slate-900">Mechanical Leadership</p>
+              <p className="text-slate-700">Drive bases, outtakes, and pit-readiness checklists for every event</p>
+            </div>
+            <div className="bg-slate-50 rounded-lg p-4 border border-slate-200">
+              <p className="text-lg font-semibold text-slate-900">Software Contributions</p>
+              <p className="text-slate-700">IK-driven mechanisms, autonomous libraries, telemetry overlays, and driver aids</p>
             </div>
           </div>
         </div>
@@ -278,7 +320,6 @@ export default function Cosmobots() {
     </div>
   );
 }
-
 
 
 

@@ -1,27 +1,37 @@
-import { Brain, GitBranch, Network, Code2, Gauge, Sparkles } from 'lucide-react';
+import { Brain, GitBranch, Network, Code2, Gauge, Sparkles, ShieldCheck, LineChart } from 'lucide-react';
 import type { SyntheticEvent } from 'react';
 
-export default function Programming() {
+export default function CSExperience() {
   const highlights = [
     {
       title: 'Inverse Kinematics + Trajectory Planning',
-      description: 'Multi-DOF outtake control with IK solvers, spline-based planners, and field-centric drive alignment.',
+      description:
+        'Multi-DOF outtake control with IK solvers, spline-based planners, and field-centric drive alignment backed by simulation runs before on-field validation.',
       icon: Network,
     },
     {
       title: 'Advanced Control Loops',
-      description: 'Square-root PID experimentation, adaptive gain scheduling, motion profiling, and feedforward tuning.',
+      description:
+        'Square-root PID experimentation, adaptive gain scheduling, motion profiling, and feedforward tuning with latency budgeting for fast cycle times.',
       icon: Gauge,
     },
     {
       title: 'Sensing & Autonomy',
-      description: 'AprilTag + IMU fusion, pose estimation, state machines for reliable autonomous and tele-op assists.',
+      description:
+        'AprilTag + IMU fusion, pose estimation, state machines for reliable autonomous and tele-op assists with redundancy for drift and occlusion.',
       icon: Brain,
     },
     {
       title: 'Libraries & Reuse',
-      description: 'Custom mechanism libraries, command-based abstractions, telemetry overlays, and config-driven tuning.',
+      description:
+        'Custom mechanism libraries, command-based abstractions, telemetry overlays, and config-driven tuning with documentation for drive-team rollout.',
       icon: Code2,
+    },
+    {
+      title: 'Reliability & QA Leadership',
+      description:
+        'Fault-injection tests, match-play dry runs, and checklists that keep driver stations, batteries, and autos stable through eliminations.',
+      icon: ShieldCheck,
     },
   ];
 
@@ -40,19 +50,21 @@ export default function Programming() {
   };
 
   const tools = [
-    'Road Runner pathing + custom spline planners',
-    'FTC SDK command-based patterns',
-    'OpenCV vision pipelines for detection + aiming',
-    'Real-time dashboards for tuning (telemetry overlays)',
-    'Version control + code reviews with Git',
+    'Road Runner pathing + custom spline planners with feedforward fitting',
+    'FTC SDK command-based patterns and hardware abstraction layers',
+    'OpenCV vision pipelines for detection + aiming and lighting compensation',
+    'Real-time dashboards for tuning (telemetry overlays, log export)',
+    'Version control + code reviews with Git and protected-branch workflows',
   ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-white via-slate-50 to-sky-50">
       <section className="bg-gradient-to-r from-white via-sky-100 to-sky-200 text-slate-900 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-5xl font-bold mb-4">Programming</h1>
-          <p className="text-xl text-slate-800">FTC software: autonomy, control, and reliability</p>
+          <h1 className="text-5xl font-bold mb-4">CS Experience</h1>
+          <p className="text-xl text-slate-800">
+            FTC + drone software leadership: autonomy, controls, and resilient match systems
+          </p>
         </div>
       </section>
 
@@ -61,7 +73,10 @@ export default function Programming() {
           {highlights.map((item, index) => {
             const Icon = item.icon;
             return (
-              <div key={index} className="bg-white/95 rounded-lg shadow-xl p-6 border border-sky-100/40 flex gap-4">
+              <div
+                key={index}
+                className="bg-white/95 rounded-lg shadow-xl p-6 border border-sky-100/40 flex gap-4"
+              >
                 <div className="bg-sky-100 w-14 h-14 rounded-lg flex items-center justify-center flex-shrink-0">
                   <Icon size={28} className="text-sky-600" />
                 </div>
@@ -89,14 +104,26 @@ export default function Programming() {
           </ul>
         </div>
 
-        <div className="bg-gradient-to-r from-sky-100 via-sky-50 to-white rounded-lg shadow-2xl shadow-sky-900/40 p-8 text-white">
+        <div className="bg-gradient-to-r from-sky-50 via-white to-slate-100 rounded-lg shadow-2xl shadow-sky-900/40 p-8 text-slate-900 border border-sky-100/60">
           <div className="flex items-center gap-3 mb-4">
-            <Sparkles />
-            <h2 className="text-3xl font-bold">Recent Focus</h2>
+            <Sparkles className="text-sky-700" />
+            <h2 className="text-3xl font-bold text-slate-900">Recent Focus</h2>
           </div>
-          <p className="text-sky-100 leading-relaxed">
-            Building reliable autonomous + tele-op assists by combining IK-driven motion with adaptive control loops and telemetry-driven iteration. Emphasis on fast tuning cycles, robust sensing, and reusable libraries that move from prototype to competition quickly.
+          <p className="text-slate-800 leading-relaxed">
+            Building reliable autonomous + tele-op assists by combining IK-driven motion with adaptive control loops and
+            telemetry-driven iteration. Emphasis on fast tuning cycles, robust sensing, drive-team usability, and
+            reusable libraries that move from prototype to competition quickly with clear documentation.
           </p>
+          <div className="mt-4 flex flex-wrap gap-3 text-slate-800">
+            <span className="inline-flex items-center gap-2 bg-white px-3 py-2 rounded-lg border border-sky-100/70 shadow-sm">
+              <LineChart size={16} className="text-sky-700" />
+              Auto KPIs for path time + accuracy
+            </span>
+            <span className="inline-flex items-center gap-2 bg-white px-3 py-2 rounded-lg border border-sky-100/70 shadow-sm">
+              <ShieldCheck size={16} className="text-sky-700" />
+              Checklists + failsafes for eliminations
+            </span>
+          </div>
         </div>
 
         <div className="bg-white/95 rounded-lg shadow-xl p-8 border border-sky-100/40">
@@ -130,4 +157,3 @@ export default function Programming() {
     </div>
   );
 }
-
