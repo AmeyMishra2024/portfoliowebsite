@@ -148,22 +148,6 @@ export default function Research() {
             </div>
           ))}
 
-          <div className="mt-8 bg-sky-50 rounded-lg p-6 border border-sky-100/60">
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-slate-200 rounded-lg aspect-video flex items-center justify-center">
-                <div className="text-center">
-                  <FileText size={48} className="mx-auto mb-2 text-slate-400" />
-                  <p className="text-slate-500 text-sm">Research Documentation</p>
-                </div>
-              </div>
-              <div className="bg-slate-200 rounded-lg aspect-video flex items-center justify-center">
-                <div className="text-center">
-                  <Microscope size={48} className="mx-auto mb-2 text-slate-400" />
-                  <p className="text-slate-500 text-sm">Research Process</p>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
 
         <div className="space-y-8 mb-16">

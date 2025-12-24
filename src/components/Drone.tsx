@@ -4,8 +4,6 @@ import type { SyntheticEvent } from 'react';
 export default function Drone() {
   const droneGallery = [
     { title: 'Drone Regional Champions', image: '/images/drone-regional-champions.jpg' },
-    { title: 'Electric Vehicle', image: '/images/electric-vehicle.jpg' },
-    { title: 'Electric Car', image: '/images/electric-car.jpg' },
   ];
 
   const achievements = [

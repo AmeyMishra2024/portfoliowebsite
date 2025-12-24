@@ -39,7 +39,7 @@ export default function OtherProjects() {
       title: 'AI Humanoid Robot',
       icon: Brain,
       color: 'from-sky-700 to-blue-700',
-      image: '/images/humanoid robot.jpg',
+      image: '/images/humanoid-bot.jpg',
       links: [
         { label: 'Project demo video', href: 'https://www.youtube.com/watch?v=bobJpkbLoXU' },
         { label: 'Project site', href: 'https://sites.google.com/view/stemsos3dprintedrobothead/pbl-project' },
@@ -207,7 +207,7 @@ export default function OtherProjects() {
   const additionalGallery = [
     { title: 'Greenpower Electric Car', image: '/images/electric-car.jpg' },
     { title: 'Drone Regional Champions', image: '/images/drone-regional-champions.jpg' },
-    { title: 'Humanoid Robot', image: '/images/humanoid robot.jpg' },
+    { title: 'Humanoid Robot', image: '/images/humanoid-bot.jpg' },
     { title: 'Adaptive IK Arm', image: '/images/humanoid-robot-arm.jpg' },
     { title: 'VEX Bot', image: '/images/vexbot.jpg' },
     { title: 'Combat Robot (Durability)', image: '/images/battlebot-1.jpg' },
