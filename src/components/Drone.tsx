@@ -39,8 +39,8 @@ export default function Drone() {
   const platformDetails = [
     'Drone: CoDRONE EDU',
     'Controller: CoDRONE Controller',
-    'Programming: Blockly and Python',
-    'Development: CoDRONE EDU Blockly Editor',
+    'Programming: Python',
+    'Development: CoDRONE EDU Python environment',
     'Sensors: gyroscope, accelerometer, barometer, optical flow, front range finder, bottom range finder, and dual underside color sensors',
     'Primary limitations: drift, battery-dependent motion, noisy color sensing, and no direct position tracking',
   ];
@@ -78,7 +78,7 @@ export default function Drone() {
   ];
 
   const programmingResults = [
-    'Completed seven Blockly projects and more than 100 lines of Blockly logic',
+    'Built and iterated Python autonomous programs for repeatable competition runs',
     'Produced a 100-point autonomous routine during testing',
     'Recorded autonomous practice scores of 90-100 points',
     'Logged only three obstacle collisions across 25 autonomous test runs',
