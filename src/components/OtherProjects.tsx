@@ -89,7 +89,7 @@ export default function OtherProjects() {
         'Coordinated drivers, scouts, and pit crew for consistent elimination performance',
       ],
       outcomes:
-        'Top 0.5% global ranking with international premier finals appearances; outreach scaled funding and student access.',
+        'Top 0.5% global ranking with international champion and premier event winner results; outreach scaled funding and student access.',
     },
     {
       title: 'VEX Robotics',

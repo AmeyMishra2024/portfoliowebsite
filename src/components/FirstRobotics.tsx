@@ -5,7 +5,7 @@ export default function FirstRobotics() {
   const videos = [
     { title: '2024 FIRST Season Recap', url: 'https://www.youtube.com/embed/cIjSa_KR5-U' },
     { title: 'Programmed Autonomous Examples', url: 'https://www.youtube.com/embed/8LldWONLAaE' },
-    { title: 'Autonomous Short Clip', url: 'https://www.youtube.com/embed/WUUOcWo_VNg' },
+    { title: 'Former WR Autonomous', url: 'https://www.youtube.com/embed/WUUOcWo_VNg' },
     { title: 'Inverse Kinematics Demo', url: 'https://www.youtube.com/embed/Taopk8Zoc3A' },
   ];
 
@@ -18,15 +18,15 @@ export default function FirstRobotics() {
   ];
 
   const team25679Achievements = [
-    'League Finalist and Regional Runner-up',
-    'International premier event finalists',
-    'Regionals Qualifier (3x)',
-    'Top 0.5% of over 8,000 global teams',
-    'First place in Houston event',
-    'League Championship winner',
-    'Regional playoffs participant',
-    'Finalist at Carolinas International Premier event',
-    'Participated in Michiana International Premier Playoffs',
+    'League Winning Alliance Captain 2x',
+    'League Inspire Award Winner',
+    'League Connect Award Winner',
+    '3x Regionals Qualifier',
+    'Regional Playoffs 2x',
+    'Regional Finalist',
+    '2024 Michiana International Premier Division Finalist',
+    '2024 Carolinas International Premier Finalist',
+    '2026 Carolinas International Premier Winner',
   ];
 
   const technicalSkills = [
@@ -49,18 +49,18 @@ export default function FirstRobotics() {
 
   const robotShowcase = [
     {
-      name: 'Into the Deep v1',
-      image: '/images/itd1-bot.png',
-      focus: 'Linear extensions + active intakes with multi-DOF outtake driven by inverse kinematics.',
-      design:
-        'Dual linear extension carriage, active intake with staged transfer, multi-axis outtake tuned with IK for accurate placement under load.',
-    },
-    {
       name: 'CenterStage Final Bot',
       image: '/images/csfinalbot.png',
       focus: 'Slide-powered hang with rail-based transfer and virtual 4-bar intake for fast cycles.',
       design:
         'Telescoping slides for endgame hang, rail-guided transfer channel, virtual 4-bar on intake for controlled approach angles.',
+    },
+    {
+      name: 'Into the Deep v1',
+      image: '/images/itd1-bot.png',
+      focus: 'Linear extensions + active intakes with multi-DOF outtake driven by inverse kinematics.',
+      design:
+        'Dual linear extension carriage, active intake with staged transfer, multi-axis outtake tuned with IK for accurate placement under load.',
     },
     {
       name: 'Into the Deep Final Bot',
@@ -70,22 +70,29 @@ export default function FirstRobotics() {
         'CF paneling for stiffness and weight savings, low-latency transfer path, optimized lift gearing for rapid scoring runs.',
     },
     {
-      name: 'Decode Final Bot',
+      name: 'Decode v1',
       image: '/images/auradecode-bot.png',
       focus: 'Carbon-fiber shooter tuned for parabolic trajectories and early-season WR solo auto.',
       design:
         'CF superstructure, flywheel tuning for arc optimization, auto routines focused on consistency and speed.',
     },
+    {
+      name: 'Decode Final Bot',
+      image: '/images/placeholder.svg',
+      focus:
+        'Double-intake robot that won Western Edge Premier Division and the Carolinas Premier event championship.',
+      design:
+        'Built for far-zone consistency with double intakes and match-tested reliability, becoming one of the most consistent far-zone bots in the world.',
+    },
   ];
 
   const photoGallery = [
     { title: 'FTC Team', image: '/images/ftc-team.jpg' },
-    { title: 'Season Header', image: '/images/page-header.jpg' },
     { title: 'League Winners', image: '/images/ftc-league-winner.jpg' },
-    { title: 'Post Finals', image: '/images/post-ftc-finals.jpg' },
+    { title: 'Post Event', image: '/images/post-ftc-finals.jpg' },
     { title: 'International Alliance Selections', image: '/images/ftc-international-alliance.jpg' },
-    { title: 'Premier International Finals', image: '/images/premier-international-finals.jpg' },
-    { title: 'International Finalist', image: '/images/ftc-international-finalist.jpg' },
+    { title: 'Premier Event Winner', image: '/images/premier-international-finals.jpg' },
+    { title: 'International Champion', image: '/images/ftc-international-finalist.jpg' },
     { title: 'Rookie Year', image: '/images/ftc-rookie-year.jpg' },
     { title: 'Regionals Setup', image: '/images/ftc-regionals-setup.jpg' },
     { title: 'FTC Random', image: '/images/ftc-random.jpg' },
@@ -141,8 +148,8 @@ export default function FirstRobotics() {
           </div>
           <div className="bg-gradient-to-br from-sky-100 to-white border border-sky-200 text-slate-900 rounded-lg shadow-lg shadow-sky-100 p-6 text-center">
             <Award size={48} className="mx-auto mb-3 text-sky-700" />
-            <h3 className="text-2xl font-bold mb-2">International Finalists</h3>
-            <p className="text-slate-700">Premier event appearances</p>
+            <h3 className="text-2xl font-bold mb-2">International Champion</h3>
+            <p className="text-slate-700">Premier event winner</p>
           </div>
           <div className="bg-gradient-to-br from-sky-100 to-white border border-sky-200 text-slate-900 rounded-lg shadow-lg shadow-sky-100 p-6 text-center">
             <Users size={48} className="mx-auto mb-3 text-sky-700" />
@@ -152,37 +159,6 @@ export default function FirstRobotics() {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8">
-          <div className="bg-white rounded-lg shadow-lg overflow-hidden border border-slate-200">
-            <div className="bg-gradient-to-r from-sky-600 to-blue-600 text-white p-6">
-              <h2 className="text-3xl font-bold flex items-center gap-3">
-                <Trophy size={32} />
-                FTC 8790
-              </h2>
-              <p className="text-sky-100 mt-2">Team Captain | League Finalist</p>
-            </div>
-            <div className="p-6">
-              <div className="bg-sky-50 rounded-lg p-4 mb-6">
-                <div className="aspect-video bg-slate-200 rounded overflow-hidden flex items-center justify-center">
-                  <img
-                    src="/images/csfinalbot.png"
-                    alt="FTC 8790 final robot"
-                    className="w-full h-full object-cover"
-                    onError={handleImageError}
-                  />
-                </div>
-              </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-4">Achievements</h3>
-              <ul className="space-y-2">
-                {team8790Achievements.map((achievement, index) => (
-                  <li key={index} className="flex items-start gap-2">
-                    <div className="w-2 h-2 bg-sky-600 rounded-full mt-2 flex-shrink-0" />
-                    <span className="text-slate-700">{achievement}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
           <div className="bg-white rounded-lg shadow-lg overflow-hidden border border-slate-200">
             <div className="bg-gradient-to-r from-blue-600 to-sky-500 text-white p-6">
               <h2 className="text-3xl font-bold flex items-center gap-3">
@@ -213,11 +189,41 @@ export default function FirstRobotics() {
               </ul>
             </div>
           </div>
+
+          <div className="bg-white rounded-lg shadow-lg overflow-hidden border border-slate-200">
+            <div className="bg-gradient-to-r from-sky-600 to-blue-600 text-white p-6">
+              <h2 className="text-3xl font-bold flex items-center gap-3">
+                <Trophy size={32} />
+                FTC 8790
+              </h2>
+              <p className="text-sky-100 mt-2">Team Captain | League Finalist</p>
+            </div>
+            <div className="p-6">
+              <div className="bg-sky-50 rounded-lg p-4 mb-6">
+                <div className="aspect-video bg-slate-200 rounded overflow-hidden flex items-center justify-center">
+                  <img
+                    src="/images/csfinalbot.png"
+                    alt="FTC 8790 final robot"
+                    className="w-full h-full object-cover"
+                    onError={handleImageError}
+                  />
+                </div>
+              </div>
+              <h3 className="text-xl font-bold text-slate-900 mb-4">Achievements</h3>
+              <ul className="space-y-2">
+                {team8790Achievements.map((achievement, index) => (
+                  <li key={index} className="flex items-start gap-2">
+                    <div className="w-2 h-2 bg-sky-600 rounded-full mt-2 flex-shrink-0" />
+                    <span className="text-slate-700">{achievement}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
 
         <div className="bg-white/90 rounded-lg shadow-xl p-8 border border-sky-100/40">
           <h2 className="text-3xl font-bold text-slate-900 mb-6">Season Photo Wall</h2>
-          <p className="text-slate-600 mb-6">Drop your photos into /public/images matching the names below.</p>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {photoGallery.map((photo) => (
               <div key={photo.title} className="bg-slate-50 rounded-lg border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
@@ -228,9 +234,6 @@ export default function FirstRobotics() {
                     className="w-full h-full object-cover"
                     onError={handleImageError}
                   />
-                </div>
-                <div className="p-4">
-                  <p className="text-slate-800 font-semibold">{photo.title}</p>
                 </div>
               </div>
             ))}
@@ -281,7 +284,6 @@ export default function FirstRobotics() {
         <div className="bg-white/95 rounded-lg shadow-xl p-8 border border-sky-100/40">
           <div className="flex items-center justify-between gap-4 flex-wrap mb-6">
             <h2 className="text-3xl font-bold text-slate-900">Robots & Design Notes</h2>
-            <p className="text-slate-600 text-sm">Images pull from /public/images/* - drop your photos there.</p>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
             {robotShowcase.map((robot) => (

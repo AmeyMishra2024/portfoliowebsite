@@ -86,18 +86,24 @@ export default function Cosmobots() {
       name: 'FTC 25679 The Cosmobots',
       role: 'Founder, Team Captain, Mechanical Lead',
       description:
-        'Primary competitive team focused on FIRST Tech Challenge competitions with top-tier global performance and international premier invitations.',
+        'Primary competitive team focused on FIRST Tech Challenge competitions with top-tier global performance, international championship results, and premier event wins.',
       achievements: [
-        'Top 0.5% global ranking and international premier finalist',
-        'League Championship winners and regional playoff runs',
-        'Software stack with IK-driven outtake, auton libraries, and telemetry overlays',
+        'League Winning Alliance Captain 2x',
+        'League Inspire Award Winner',
+        'League Connect Award Winner',
+        '3x Regionals Qualifier',
+        'Regional Playoffs 2x',
+        'Regional Finalist',
+        '2024 Michiana International Premier Division Finalist',
+        '2024 Carolinas International Premier Finalist',
+        '2026 Carolinas International Premier Winner',
       ],
     },
     {
       name: 'FTC 8790',
       role: 'Team Captain',
       description: 'Established competitive team with strong regional performance',
-      achievements: ['League finalist', 'Regional runner-up', 'International Premier finalists'],
+      achievements: ['League finalist', 'Regional runner-up', 'Regional playoffs'],
     },
   ];
 
@@ -152,7 +158,7 @@ export default function Cosmobots() {
           <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-slate-50 rounded-lg p-4 border border-slate-200">
               <p className="text-lg font-semibold text-slate-900">Global Ranking</p>
-              <p className="text-slate-700">Top 0.5% with premier international finalist appearances</p>
+              <p className="text-slate-700">Top 0.5% with international champion and premier event winner results</p>
             </div>
             <div className="bg-slate-50 rounded-lg p-4 border border-slate-200">
               <p className="text-lg font-semibold text-slate-900">Mechanical Leadership</p>
@@ -320,7 +326,6 @@ export default function Cosmobots() {
     </div>
   );
 }
-
 
 
 

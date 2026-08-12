@@ -22,6 +22,7 @@ export default function Home() {
   ];
 
   const certifications = [
+    'CompTIA Network+',
     'Autodesk Fusion 360',
     'Python (OpenEDG, Microsoft ITS)',
     'Adobe Photoshop & Illustrator',
@@ -37,23 +38,23 @@ export default function Home() {
     },
     {
       icon: Users,
-      value: '3+',
-      label: 'Teams managed (FTC + clubs)',
+      value: '7+',
+      label: 'Clubs + FTC teams managed',
     },
     {
       icon: HandCoins,
-      value: '$20K+',
+      value: '$45K+',
       label: 'Funding raised for teams',
     },
     {
       icon: Rocket,
-      value: '1,000+',
-      label: 'Volunteer hours (350+ personal)',
+      value: '850+',
+      label: 'Personal hours',
     },
   ];
 
   const summaryHighlights = [
-    'Founder of Cosmobots Robotics (league winners, international premier finalists) delivering STEM access to underserved schools.',
+    'Founder of Cosmobots Robotics, delivering STEM access to underserved schools.',
     'FTC captain driving teams to top 0.5% global performance with advanced mech + software strategy.',
     'NASA-linked research into aerospace + AI applications, targeting sustainable space systems.',
   ];
@@ -196,6 +197,14 @@ export default function Home() {
                 </li>
               ))}
             </ul>
+            <a
+              href="https://www.credly.com/users/amey-mishra/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-5 inline-flex text-sm font-semibold text-sky-700 hover:text-sky-500"
+            >
+              More certifications
+            </a>
           </div>
         </div>
 
@@ -265,7 +274,7 @@ export default function Home() {
             <div className="mt-4 flex flex-wrap gap-3">
               <span className="bg-white/20 px-4 py-2 rounded-full text-sm">Honor Roll: 9th, 10th, 11th Grade</span>
               <span className="bg-white/20 px-4 py-2 rounded-full text-sm">National Honor Society</span>
-              <span className="bg-white/20 px-4 py-2 rounded-full text-sm">Student Council President</span>
+              <span className="bg-white/20 px-4 py-2 rounded-full text-sm">National Merit Commended</span>
               <span className="bg-white/20 px-4 py-2 rounded-full text-sm">AP Scholar with Distinction</span>
             </div>
           </div>

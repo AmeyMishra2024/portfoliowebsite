@@ -1,4 +1,4 @@
-import { BookOpen, Microscope, Award, Users, FileText, Rocket } from 'lucide-react';
+import { BookOpen, Microscope, Award, FileText, Rocket } from 'lucide-react';
 
 export default function Research() {
   const publications = [
