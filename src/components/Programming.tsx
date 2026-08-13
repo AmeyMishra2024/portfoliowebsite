@@ -1,4 +1,4 @@
-import { Brain, GitBranch, Network, Code2, Gauge, Sparkles, ShieldCheck, LineChart } from 'lucide-react';
+import { Brain, GitBranch, Network, Code2, Gauge, Sparkles, ShieldCheck, LineChart, ExternalLink } from 'lucide-react';
 import type { SyntheticEvent } from 'react';
 
 export default function CSExperience() {
@@ -55,6 +55,58 @@ export default function CSExperience() {
     'OpenCV vision pipelines for detection + aiming and lighting compensation',
     'Real-time dashboards for tuning (telemetry overlays, log export)',
     'Version control + code reviews with Git and protected-branch workflows',
+  ];
+
+  const codebases = [
+    {
+      name: '25679-MTI',
+      url: 'https://github.com/AmeyMishra2024/25679-MTI',
+      language: 'Java',
+      description:
+        'FTC Java codebase for Team 25679 competition development, focused on autonomous routines, mechanism control, and match-ready robot software.',
+    },
+    {
+      name: 'Centerstage-Robot',
+      url: 'https://github.com/AmeyMishra2024/Centerstage-Robot',
+      language: 'CAD / Design',
+      description:
+        'CenterStage robot design repository documenting CAD work, mechanism planning, and build concepts for FTC competition hardware.',
+    },
+    {
+      name: 'FTC-active-intake-outtake',
+      url: 'https://github.com/AmeyMishra2024/FTC-active-intake-outtake',
+      language: 'FTC Design',
+      description:
+        'Active intake and outtake mechanism project for FTC, capturing design iterations for faster transfer, scoring consistency, and serviceable assembly.',
+    },
+    {
+      name: 'HCA',
+      url: 'https://github.com/AmeyMishra2024/HCA',
+      language: 'Hack Club Arcade',
+      description:
+        'Collection of Hack Club Arcade projects showing rapid prototyping across small software builds, interaction experiments, and learning-focused code.',
+    },
+    {
+      name: 'Logitech-Camera-Mount',
+      url: 'https://github.com/AmeyMishra2024/Logitech-Camera-Mount',
+      language: 'CAD / Fabrication',
+      description:
+        'Custom camera mount design for Logitech hardware, built around practical mounting, alignment, and fabrication constraints.',
+    },
+    {
+      name: 'portfoliowebsite',
+      url: 'https://github.com/AmeyMishra2024/portfoliowebsite',
+      language: 'TypeScript',
+      description:
+        'React, TypeScript, and Tailwind portfolio site that organizes engineering work, robotics achievements, research, and project documentation.',
+    },
+    {
+      name: 'Starship-Launch-Tower',
+      url: 'https://github.com/AmeyMishra2024/Starship-Launch-Tower',
+      language: 'CAD / Aerospace',
+      description:
+        'Aerospace-inspired launch tower design project exploring large-scale structure concepts, mechanical layout, and model-based engineering practice.',
+    },
   ];
 
   return (
@@ -123,6 +175,35 @@ export default function CSExperience() {
               <ShieldCheck size={16} className="text-sky-700" />
               Checklists + failsafes for eliminations
             </span>
+          </div>
+        </div>
+
+        <div className="bg-white/95 rounded-lg shadow-xl p-8 border border-sky-100/40">
+          <div className="flex items-center gap-3 mb-6">
+            <GitBranch className="text-sky-700" />
+            <h2 className="text-3xl font-bold text-slate-900">Codebases</h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6">
+            {codebases.map((repo) => (
+              <a
+                key={repo.name}
+                href={repo.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group bg-slate-50 rounded-lg border border-sky-100/60 p-5 hover:border-sky-300 hover:shadow-lg transition-all"
+              >
+                <div className="flex items-start justify-between gap-4 mb-3">
+                  <div>
+                    <h3 className="text-xl font-bold text-slate-900 group-hover:text-sky-700 transition-colors">
+                      {repo.name}
+                    </h3>
+                    <p className="text-sm font-semibold text-sky-700 mt-1">{repo.language}</p>
+                  </div>
+                  <ExternalLink size={18} className="text-slate-400 group-hover:text-sky-600 flex-shrink-0 mt-1" />
+                </div>
+                <p className="text-slate-700 text-sm leading-relaxed">{repo.description}</p>
+              </a>
+            ))}
           </div>
         </div>
 

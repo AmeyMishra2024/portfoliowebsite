@@ -23,7 +23,7 @@ export default function OtherProjects() {
       title: 'Autonomous Drone Platforms',
       icon: Satellite,
       color: 'from-sky-700 to-cyan-600',
-      image: '/images/drone-regional-champions.jpg',
+      image: '/images/placeholder.svg',
       description:
         'Custom UAVs for RADC with 3D-printed airframes, waypoint navigation, and sensor fusion for reliable field demos.',
       technologies: ['Python', 'IMU + optical flow', 'Waypoint navigation', '3D printing'],
@@ -125,7 +125,7 @@ export default function OtherProjects() {
       title: 'ORCA - Orbital Recycling and Construction Array',
       icon: Satellite,
       color: 'from-blue-800 to-cyan-700',
-      image: '/images/rocket-models.jpg',
+      image: '/images/placeholder.svg',
       link: 'https://orcadebriscleanup.space/',
       description:
         'International Space Apps Challenge project emphasizing orbital debris analysis, neural networks, and mission design for capture and recycling.',
@@ -142,7 +142,7 @@ export default function OtherProjects() {
       title: 'EcoScape Sustainable Architecture',
       icon: TreePine,
       color: 'from-emerald-700 to-lime-600',
-      image: '/images/more-rockets.jpg',
+      image: '/images/placeholder.svg',
       description:
         'Sustainable architecture and systems-planning project coupling environmental data analysis with adaptable urban design.',
       technologies: ['Environmental Analysis', 'Urban Planning', 'CAD', 'Data Analytics'],
@@ -407,9 +407,6 @@ export default function OtherProjects() {
                     className="w-full h-full object-cover"
                     onError={handleImageError}
                   />
-                </div>
-                <div className="p-4">
-                  <p className="font-semibold text-slate-900">{photo.title}</p>
                 </div>
               </div>
             ))}
