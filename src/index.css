@@ -5,3 +5,9 @@
 html {
   scroll-behavior: smooth;
 }
+
+:focus-visible { outline: 3px solid #0369a1; outline-offset: 4px; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
