@@ -2,31 +2,31 @@ import { Users, DollarSign, Heart, Rocket, Award, Target } from 'lucide-react';
 
 export default function Cosmobots() {
   const teamSiteLink =
-    'https://sites.google.com/d/1Hadu3TdUw9_hliONlm7TmsH-GP5G60U6/p/1We2B4N7u3Sd1w5XnVvWt51gqpUO7Bjyo/edit';
+    'https://cosmobots.org/';
 
   const achievements = [
     {
       icon: DollarSign,
-      value: '$20,000+',
+      value: '$50,000+',
       label: 'Funding Secured',
       color: 'from-sky-600 to-blue-600',
     },
     {
       icon: Heart,
-      value: '1,200+',
+      value: '4,500+',
       label: 'Volunteer Hours (team-wide)',
       color: 'from-sky-500 to-blue-500',
     },
     {
       icon: Users,
-      value: '3+',
-      label: 'Teams Managed',
+      value: '4',
+      label: 'Local FTC Teams Founded',
       color: 'from-sky-400 to-blue-500',
     },
     {
       icon: Rocket,
-      value: '350',
-      label: 'Personal Hours',
+      value: '1,000+',
+      label: 'Students Directly Served',
       color: 'from-sky-500 to-cyan-500',
     },
   ];
@@ -62,22 +62,22 @@ export default function Cosmobots() {
     {
       title: 'Food & Toy Drives',
       description: 'Coordinated multiple drives to support local families, collecting and distributing essential items to those in need.',
-      impact: '100+ families served',
+      impact: 'Food, toy, and clothing drives',
     },
     {
       title: 'STEM Education Programs',
       description: 'Brought hands-on robotics and engineering education to underrepresented areas, inspiring the next generation of engineers.',
-      impact: '200+ students reached',
+      impact: '1,000+ students directly served',
     },
     {
       title: 'Robotics Team Support',
       description: 'Provided mentorship, resources, and guidance to multiple FTC teams, helping them achieve competitive success.',
-      impact: '3 teams supported',
+      impact: '4 local FTC teams founded',
     },
     {
       title: 'Community Workshops',
       description: 'Organized workshops on programming, CAD design, and robot building for students from diverse backgrounds.',
-      impact: '50+ workshops conducted',
+      impact: 'CAD, programming, and robot-building workshops',
     },
   ];
 
