@@ -18,6 +18,10 @@ export default function FirstRobotics() {
   ];
 
   const team25679Achievements = [
+    'Fourth-ranked alliance at FTC Worlds',
+    'California Premier Division Champion and Robot Design Award',
+    'Western Edge Premier Division Champion',
+    'FTC Hall of Fame team',
     'League Winning Alliance Captain 2x',
     'League Inspire Award Winner',
     'League Connect Award Winner',
@@ -33,7 +37,7 @@ export default function FirstRobotics() {
     {
       title: 'Mechanical Design',
       description:
-        'Effective design strategies for actuator use, working within constraints to create robots that effectively solve challenges, complex hardware mechanisms',
+        'Designed intake, transfer, and outtake mechanisms under game constraints. Reduced transfer time from 0.75 seconds to 0.30 seconds through mechanism iteration and testing.',
     },
     {
       title: 'Software Development',

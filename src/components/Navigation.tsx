@@ -39,7 +39,7 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
             Amey Mishra
           </button>
 
-          <div className="hidden md:flex space-x-1">
+          <div className="hidden xl:flex space-x-1">
             {navItems.map((item) =>
               item.id === 'resume' ? (
                 <a
@@ -70,7 +70,9 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
 
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 rounded-md hover:bg-sky-100"
+            aria-label={mobileMenuOpen ? "Close navigation" : "Open navigation"}
+            aria-expanded={mobileMenuOpen}
+            className="xl:hidden p-2 rounded-md hover:bg-sky-100"
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -78,7 +80,7 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
       </div>
 
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white/95 backdrop-blur border-t border-slate-200 shadow-lg">
+        <div className="xl:hidden bg-white/95 backdrop-blur border-t border-slate-200 shadow-lg">
           <div className="px-2 pt-2 pb-3 space-y-1">
             {navItems.map((item) =>
               item.id === 'resume' ? (

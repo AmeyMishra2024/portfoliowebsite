@@ -3,17 +3,40 @@ import { BookOpen, Microscope, Award, FileText, Rocket } from 'lucide-react';
 export default function Research() {
   const publications = [
     {
+      title: 'Separating Catalog-Update Effects from Solver and Hub-State Effects in Return-to-Hub Debris Routing',
+      journal: 'ISMSIT 2026',
+      status: 'Accepted',
+      year: '2026',
+      description: 'Independent computational study separating changes in orbital catalog inputs from solver and hub-state effects in debris routing. Accepted September 26, 2026 (Paper 266). I am the corresponding author and speaker. Conference acceptance is distinct from proceedings publication.',
+      topics: ['Orbital Debris', 'Routing', 'Sensitivity Analysis', 'Computational Research'],
+      doi: '',
+    },
+    {
       title: 'Space Debris and Their Impact',
       journal: 'American Journal of Student Research',
       status: 'Published',
       year: '2024',
-      description: 'Comprehensive research on space debris, analyzing their trajectories, impact on orbital operations, and potential mitigation strategies. Published with an emphasis on actionable mitigation informed by orbital mechanics and sensor coverage models.',
+      description: 'Study of orbital debris growth, collision risks, operational impacts, and mitigation strategies.',
       topics: ['Orbital Mechanics', 'Space Sustainability', 'Debris Mitigation', 'Environmental Impact'],
       doi: 'https://doi.org/10.70251/HYJR2348.34247252',
     },
   ];
 
   const researchExperiences = [
+    {
+      title: 'Electromagnetic Energy Harvesting',
+      role: 'Summer Research Intern at Rice University',
+      period: 'Summer research',
+      description: 'Investigated electromagnetic energy harvesting for low-power electronics using microcontroller test systems and simulation.',
+      achievements: ['Compared prototype behavior under varying conditions', 'Evaluated feasibility, applications, and limitations', 'Presented at the London International Conference', 'Submitted a manuscript for publication; acceptance is not claimed'],
+    },
+    {
+      title: 'Humanoid Arm and Inverse Kinematics',
+      role: 'Independent researcher mentored by a Stanford PhD student',
+      period: 'Independent robotics research',
+      description: 'Designed and 3D-printed an arm, integrated motors and sensors, and developed inverse kinematics with Java, Arduino, and OpenCV. This was mentorship by a PhD student rather than a Stanford institutional appointment.',
+      achievements: ['Integrated vision and motion control', 'Tested hardware and algorithms on a physical arm'],
+    },
     {
       title: 'International Space Apps Challenge',
       role: 'Global Nominee',
@@ -59,21 +82,8 @@ export default function Research() {
   ];
 
   const competitions = [
-    {
-      name: 'NASA Global Conrad Challenge',
-      status: 'Participant - Awaiting Results',
-      year: '2025',
-    },
-    {
-      name: 'Samsung Solve for Tomorrow',
-      status: 'Participant - Awaiting Results',
-      year: '2025',
-    },
-    {
-      name: 'Ecybermission',
-      status: 'Texas State Second Place',
-      year: '2024',
-    },
+    { name: 'NASA Space Apps Challenge', status: 'Regional Winner and Global Semifinalist', year: 'ORCA' },
+    { name: 'eCYBERMISSION', status: 'Texas State Second Place', year: '2024' },
   ];
 
   return (
@@ -82,7 +92,7 @@ export default function Research() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-5xl font-bold mb-4">Research & Development</h1>
           <p className="text-xl text-slate-800">
-            Exploring frontiers in aerospace engineering, AI, and sustainable technologies
+            Orbital debris routing, energy harvesting, and robot perception and control
           </p>
         </div>
       </section>
@@ -211,26 +221,13 @@ export default function Research() {
         </div>
 
         <div className="mt-16 bg-gradient-to-r from-sky-50 via-white to-slate-100 rounded-lg shadow-2xl shadow-sky-900/20 p-8 text-slate-900 border border-sky-100/60">
-          <h2 className="text-3xl font-bold mb-4">Research Impact</h2>
+          <h2 className="text-3xl font-bold mb-4">ORCA: scope and limitations</h2>
           <p className="text-lg text-slate-800 mb-6">
-            My research focuses on addressing critical challenges in aerospace engineering and sustainable technologies.
-            Through publications, competitions, and hands-on projects, I strive to contribute meaningful solutions to
-            real-world problems while advancing scientific knowledge.
+            The routing study uses computational models to examine return-to-hub debris collection.
+            The models do not establish physical capture, detumbling, towing, recycling, or manufacturing feasibility.
+            Simplified sensing and screening-level guidance require further validation before operational use.
           </p>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div>
-              <h3 className="text-xl font-bold mb-2 text-slate-900">Collaboration</h3>
-              <p className="text-slate-800">
-                Working with space programs, university researchers, and industry partners to develop innovative solutions.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-xl font-bold mb-2 text-slate-900">Future Goals</h3>
-              <p className="text-slate-800">
-                Continue research in aerospace engineering, focusing on space sustainability and advanced propulsion systems.
-              </p>
-            </div>
-          </div>
+          <a href="https://orcadebriscleanup.space/" target="_blank" rel="noopener noreferrer" className="inline-flex bg-sky-700 text-white px-6 py-3 rounded-lg font-semibold">Explore ORCA</a>
         </div>
       </section>
     </div>

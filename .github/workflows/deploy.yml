@@ -21,6 +21,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Fetch verified portfolio media
+        run: python scripts/import-november-assets.py
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:

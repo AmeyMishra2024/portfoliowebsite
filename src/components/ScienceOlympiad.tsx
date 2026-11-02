@@ -17,7 +17,7 @@ export default function ScienceOlympiad() {
   ];
 
   const allMedals = [
-    { type: 'Regional Gold', count: 6 },
+    { type: 'Regional Gold', count: 7 },
     { type: 'Regional Silver', count: 1 },
     { type: 'Regional Bronze', count: 4 },
     { type: 'State Gold', count: 1 },

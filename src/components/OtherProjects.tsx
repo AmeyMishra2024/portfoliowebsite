@@ -25,7 +25,7 @@ export default function OtherProjects() {
       color: 'from-sky-700 to-cyan-600',
       image: '/images/placeholder.svg',
       description:
-        'Custom UAVs for RADC with 3D-printed airframes, waypoint navigation, and sensor fusion for reliable field demos.',
+        'Independent drone work using waypoint navigation and live video for mapping. Competition drone programming is documented separately on the Drone page.',
       technologies: ['Python', 'IMU + optical flow', 'Waypoint navigation', '3D printing'],
       features: [
         'Autonomy stack with IMU fusion and altitude hold tuned for competition flight envelopes',
@@ -33,7 +33,7 @@ export default function OtherProjects() {
         'Ground-station telemetry for live tuning and fail-safe triggers',
       ],
       outcomes:
-        'Regional champion platform validated through repeated mission runs and post-flight log reviews.',
+        'Independent build exploring autonomous navigation and mapping.',
     },
     {
       title: 'AI Humanoid Robot',
@@ -71,7 +71,7 @@ export default function OtherProjects() {
         'Designed for integration with humanoid research platforms and tele-op assist modes',
       ],
       outcomes:
-        'Validated adaptive IK routines with repeatable reach accuracy and a control stack ready for humanoid research experiments.',
+        'Refined the arm hardware and inverse kinematics through physical testing; quantitative reach accuracy is not reported here.',
     },
     {
       title: 'FTC 25679 – The Cosmobots',

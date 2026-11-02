@@ -15,7 +15,7 @@ export default function Home() {
     'Project Management',
     'Robotics Programming',
     'Engineering Design',
-    'CAD (Fusion 360)',
+    'CAD (Fusion 360 & Onshape)',
     'Python & JavaScript',
     'Community Outreach',
     'Strategic Planning',
@@ -33,30 +33,30 @@ export default function Home() {
   const stats = [
     {
       icon: Award,
-      value: '0.5%',
-      label: 'Global ranking (FTC 25679)',
+      value: '4th',
+      label: 'Ranked alliance at FTC Worlds',
     },
     {
       icon: Users,
-      value: '7+',
-      label: 'Clubs + FTC teams managed',
+      value: '4',
+      label: 'Local FTC teams founded',
     },
     {
       icon: HandCoins,
-      value: '$45K+',
+      value: '$50K+',
       label: 'Funding raised for teams',
     },
     {
       icon: Rocket,
-      value: '850+',
-      label: 'Personal hours',
+      value: '4,500+',
+      label: 'Logged volunteer hours across Cosmobots',
     },
   ];
 
   const summaryHighlights = [
     'Founder of Cosmobots Robotics, delivering STEM access to underserved schools.',
-    'FTC captain driving teams to top 0.5% global performance with advanced mech + software strategy.',
-    'NASA-linked research into aerospace + AI applications, targeting sustainable space systems.',
+    'FTC captain and mechanical lead, with a fourth-ranked alliance at Worlds and international premier event wins.',
+    'Independent orbital debris routing research accepted at ISMSIT 2026; earlier work published in the American Journal of Student Research.',
   ];
 
   const languages = [
@@ -103,14 +103,14 @@ export default function Home() {
                 Aerospace, robotics, and community-centered engineering
               </p>
               <p className="text-lg text-slate-700 leading-relaxed mb-6">
-                Student engineer blending aerospace ambition with hands-on robotics leadership. I build teams,
-                secure resources, and design hardware/software systems that compete nationally while expanding STEM
-                access in Houston.
+                I design mechanisms, write control software, and study orbital debris routing. As captain and
+                mechanical lead in FTC and founder of Cosmobots Robotics, I also organize teams, raise funding,
+                and help students build and test their own robots.
               </p>
               <div className="bg-white/70 border border-sky-200 rounded-xl p-6 mb-8 backdrop-blur shadow-md">
                 <div className="flex items-center gap-2 text-slate-800 font-semibold mb-3">
                   <Sparkles size={18} className="text-sky-600" />
-                  <span>Quick summary</span>
+                  <span>Current work</span>
                 </div>
                 <ul className="space-y-2 text-slate-700">
                   {summaryHighlights.map((item, index) => (
@@ -123,7 +123,7 @@ export default function Home() {
               </div>
               <div className="flex flex-wrap gap-4">
                 <a
-                  href="mailto:amey.mishra2025@gmail.com"
+                  href="mailto:amey.mishra2020@gmail.com"
                   className="flex items-center gap-2 bg-sky-600 hover:bg-sky-500 text-white px-6 py-3 rounded-lg transition-colors font-semibold shadow-lg shadow-sky-200/60"
                 >
                   <Mail size={20} />
@@ -215,8 +215,8 @@ export default function Home() {
               <Mail className="text-sky-600 flex-shrink-0" size={24} />
               <div>
                 <p className="text-sm text-gray-600">Email</p>
-                <a href="mailto:amey.mishra2025@gmail.com" className="text-slate-900 hover:text-sky-600">
-                  amey.mishra2025@gmail.com
+                <a href="mailto:amey.mishra2020@gmail.com" className="text-slate-900 hover:text-sky-600">
+                  amey.mishra2020@gmail.com
                 </a>
               </div>
             </div>
