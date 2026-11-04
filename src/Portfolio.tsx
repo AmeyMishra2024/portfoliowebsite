@@ -1,3 +1,4 @@
+import ProjectClips, {hasClips} from './ProjectClips';
 import { useEffect, useRef, useState } from 'react';
 import { Linkedin, Mail, Menu, Sparkles, X } from 'lucide-react';
 import { sections, labels } from './portfolioContent';
@@ -144,7 +145,7 @@ export default function Portfolio() {
               </figure>
             </section>
 
-            <NextBigThing home />
+            <LatestHyperion onExplore={() => {go('Projects'); requestAnimationFrame(() => document.getElementById('chapter-1')?.scrollIntoView({block:'start'}));}} />
             <section className="numbers" aria-label="Selected achievements">
               {highlights.map(([value, label]) => (
                 <div key={label}>
@@ -249,7 +250,8 @@ function ContentCard({ item, index, hideVideo = false }: { item: PortfolioItem; 
         <div className="detail-card-meta"><span>{String(index + 1).padStart(2, '0')}</span><p>{item.meta}</p></div>
         <h2>{item.title}</h2>
         {item.text.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-        {item.points && <ul>{item.points.map((point) => <li key={point}>{point}</li>)}</ul>}
+        {item.title==='InMoov humanoid (2022–2025)' && <a href="#chapter-1">See Hyperion, my RV-gearbox humanoid</a>}
+      {item.points && <ul>{item.points.map((point) => <li key={point}>{point}</li>)}</ul>}
         {item.links && (
           <div className="links">
             {item.links.map(([label, href]) => <a key={href} href={href} target="_blank" rel="noopener noreferrer">{label}</a>)}
@@ -289,7 +291,6 @@ function DetailPage({ page, content }: { page: string; content: PortfolioPage })
     <div className="detail-page story-page" data-page={page}>
       <PageLead content={content} />
 
-      {page === 'Projects' && <NextBigThing />}
       <nav className="chapter-nav" aria-label={`Explore ${content.title}`}>
         <select aria-label="Jump to a section" defaultValue="" onChange={event => {
           document.getElementById(event.target.value)?.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'start' });
@@ -302,13 +303,13 @@ function DetailPage({ page, content }: { page: string; content: PortfolioPage })
         </select>
       </nav>
 
-      <section className={`feature-story ${featured.image ? 'feature-with-image' : ''}`} id="chapter-1">
+      <section className={`feature-story ${featured.image ? 'feature-with-image' : ''} ${hasClips(featured.title) ? 'feature-has-media' : ''}`} id="chapter-1">
         <div className="feature-story-copy">
           <p className="story-label"><span>01 / Featured</span>{featured.meta}</p>
           <h2>{featured.title}</h2>
-          <StoryDetails item={featured} />
+          <StoryDetails item={hasClips(featured.title) ? {...featured,photos:undefined} : featured} />
         </div>
-        {featured.image && <figure><MediaImage src={featured.image} alt={featured.caption ?? featured.title} /><figcaption>{featured.caption ?? featured.title}{featured.credit && <a className="image-credit" href={featured.credit[1]} target="_blank" rel="noopener noreferrer">{featured.credit[0]}</a>}</figcaption></figure>}
+        {hasClips(featured.title) ? <MediaCollection item={featured}/> : <>{featured.image && <figure><MediaImage src={featured.image} alt={featured.caption ?? featured.title} /><figcaption>{featured.caption ?? featured.title}{featured.credit && <a className="image-credit" href={featured.credit[1]} target="_blank" rel="noopener noreferrer">{featured.credit[0]}</a>}</figcaption></figure>}</>}
       </section>
 
       {chapters.length > 0 && (
@@ -316,11 +317,12 @@ function DetailPage({ page, content }: { page: string; content: PortfolioPage })
           <div className="story-chapters-heading"><p className="kicker">More from this area</p><h2>{page === 'Projects' ? 'Built, tested, and still in progress.' : page === 'Research' ? 'Studies and experiments.' : 'The work, step by step.'}</h2></div>
           <div className="story-list">
             {chapters.map((item, index) => (
-              <article className={`story-row ${item.image || item.photoLayout === 'aside' ? 'story-row-with-image' : ''}`} id={`chapter-${index + 2}`} key={item.title}>
+              <article className={`story-row ${!hasClips(item.title) && (item.image || item.photoLayout === 'aside') ? 'story-row-with-image' : ''}`} id={`chapter-${index + 2}`} key={item.title}>
                 <div className="story-row-label"><span>{String(index + 2).padStart(2, '0')}</span><p>{item.meta}</p></div>
-                <div className="story-row-copy"><h3>{item.title}</h3><StoryDetails item={item.photoLayout === 'aside' ? {...item,photos:undefined} : item} /></div>
-                {item.photoLayout === 'aside' && item.photos && <div className="story-row-photo-stack">{item.photos.map(photo => <figure key={photo.image}><MediaImage src={photo.image} alt={photo.title} loading="lazy"/><figcaption>{photo.title}</figcaption></figure>)}</div>}
-                {item.image && <figure><MediaImage src={item.image} alt={item.caption ?? item.title} loading="lazy" /><figcaption>{item.caption ?? item.title}{item.credit && <a className="image-credit" href={item.credit[1]} target="_blank" rel="noopener noreferrer">{item.credit[0]}</a>}</figcaption></figure>}
+                <div className="story-row-copy"><h3>{item.title}</h3><StoryDetails item={item.photoLayout === 'aside' || hasClips(item.title) ? {...item,photos:undefined} : item} /></div>
+                {!hasClips(item.title) && item.photoLayout === 'aside' && item.photos && <div className="story-row-photo-stack">{item.photos.map(photo => <figure key={photo.image}><MediaImage src={photo.image} alt={photo.title} loading="lazy"/><figcaption>{photo.title}</figcaption></figure>)}</div>}
+                {item.image && !hasClips(item.title) && <figure><MediaImage src={item.image} alt={item.caption ?? item.title} loading="lazy" /><figcaption>{item.caption ?? item.title}{item.credit && <a className="image-credit" href={item.credit[1]} target="_blank" rel="noopener noreferrer">{item.credit[0]}</a>}</figcaption></figure>}
+                {hasClips(item.title) && <MediaCollection item={item}/>}
               </article>
             ))}
           </div>
@@ -334,6 +336,7 @@ function StoryDetails({ item }: { item: PortfolioItem }) {
   return (
     <div className="story-details">
       {item.text.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+      {item.title==='InMoov humanoid (2022–2025)' && <a href="#chapter-1">See Hyperion, my RV-gearbox humanoid</a>}
       {item.points && <ul>{item.points.map((point) => <li key={point}>{point}</li>)}</ul>}
       {item.links && <div className="links">{item.links.map(([label, href]) => <a key={href} href={href} target="_blank" rel="noopener noreferrer">{label} ↗</a>)}</div>}
       {item.photos && !item.poster && <div className={`project-gallery ${item.photos.length === 2 ? 'gallery-pair' : ''}`}>{item.photos.map(photo=><figure key={photo.image}><a href={photo.image} target="_blank" rel="noopener noreferrer" aria-label={`Open ${photo.title}`}><MediaImage linked src={photo.image} alt={photo.title} loading="lazy" /></a><figcaption>{photo.title}</figcaption></figure>)}</div>}
@@ -365,15 +368,20 @@ function FirstRoboticsPage({ content }: { content: PortfolioPage }) {
       </section>
 
       <section className="detail-section video-section">
-        <div className="detail-section-heading"><p className="kicker">On the field</p><h2>Season videos</h2></div>
-        <div className="video-grid">
+        <div className="detail-section-heading"><p className="kicker">Mechanisms and match testing</p><h2>Season development</h2></div>
+        <div className="ftc-season-grid">{['Centerstage','Into the Deep','DECODE'].map(season=><article key={season}><h3>{season}</h3><div className="season-clips"><ProjectClips title={season}/></div></article>)}</div>
+      </section>
+
+      <section className="detail-section video-section">
+        <div className="detail-section-heading"><p className="kicker">On the field</p><h2>Match archive</h2></div>
+        <details className="match-archive"><summary>Open four earlier match videos</summary><div className="video-grid">
           {firstVideos.map((video) => (
             <figure key={video.title}>
               <div className="video-frame"><iframe src={video.url} title={video.title} loading="lazy" allowFullScreen /></div>
               <figcaption>{video.title}</figcaption>
             </figure>
           ))}
-        </div>
+        </div></details>
       </section>
 
       <section className="detail-section">
@@ -419,10 +427,23 @@ function ResearchPage({content}:{content:PortfolioPage}) {
       <header className="paper-heading"><span className="paper-number">{String(i+1).padStart(2,'0')}</span><div><p className="kicker">{i<2?'Featured research':'Related work'}</p><h2>{item.title}</h2><p className="paper-meta">{item.meta}</p></div></header>
       <div className={item.poster?'paper-layout':'paper-body'}><div><StoryDetails item={{...item,video:undefined}}/>{i===0&&<aside className="research-limit"><strong>Scope of the results</strong><p>The reported results are simulations. Physical capture, detumbling, towing, and hub processing require further validation.</p></aside>}</div>
       {item.poster&&<figure className="research-poster"><a href={item.poster} target="_blank" rel="noopener noreferrer"><MediaImage linked src={item.photos?.[0].image} alt={item.photos?.[0].title ?? item.title+' research poster'} loading="lazy"/></a><figcaption><a href={item.poster} target="_blank" rel="noopener noreferrer">Open the full research poster (PDF) ↗</a></figcaption></figure>}</div>
-      {item.video&&<details className="research-demo"><summary>View the ORCA project presentation</summary><div className="film"><iframe src={item.video} title="ORCA project presentation" loading="lazy" allowFullScreen/></div></details>}
     </article>)}</div></div>;
 }
 
-function NextBigThing({home=false}:{home?:boolean}) {
-  return <section className="project-preview" aria-label={home?'Latest news':'In development'}><div><p className="kicker">{home?'Latest news':'In development'}</p><h2>The next big thing.</h2><p className="project-eta">ETA: <time dateTime="2026-10-22">October 22</time></p><p>Something big is coming soon. RV gearboxes, joint mechanisms, and a growing collection of custom components are coming together on my workbench.</p></div><div className="teaser-images"><MediaImage className="teaser-render" src="/images/humanoid-cad-preview.png" alt="Full humanoid robot CAD design" /><MediaImage src="/images/humanoid-development-preview.png" alt="Gearboxes and components for the next big thing" /></div></section>;
+function LatestHyperion({onExplore}:{onExplore:()=>void}) {
+  return <section className="project-preview" aria-label="Latest"><div><p className="kicker">Latest</p><h2>Hyperion</h2><p>Hyperion: my 6-ft humanoid robot. 55 joints, upper body powered, walking in simulation.</p><div className="links"><button onClick={onExplore}>Explore Hyperion</button></div></div><div className="teaser-images latest-photos"><MediaImage src="/media/posters/hyperion-wave-v2.jpg" alt="Hyperion, my built humanoid robot"/><MediaImage src="/media/extracted/hyperion-hand.jpg" alt="Hyperion tendon-driven hand"/></div></section>;
+}
+
+function MediaCollection({item}:{item:PortfolioItem}) {
+  const candidates=item.image ? [{image:item.image,title:item.caption ?? item.title},...(item.photos ?? [])] : item.photos ?? [];
+  const seen=new Set<string>();
+  const photos=candidates.filter(photo=>{
+    if(item.title==='Greenpower USA electric car' && photo.image==='/images/greenpower-electric-car.png')return false;
+    if(seen.has(photo.image))return false;
+    seen.add(photo.image);return true;
+  });
+  return <div className={`media-collection ${item.title.startsWith('Hyperion:')?'hyperion-media':''}`}>
+    {photos.map(photo=><figure className="paired-photo" key={photo.image}><MediaImage src={photo.image} alt={photo.title} loading="lazy"/><figcaption>{photo.title}</figcaption></figure>)}
+    <ProjectClips title={item.title}/>
+  </div>;
 }
