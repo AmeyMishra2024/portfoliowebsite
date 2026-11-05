@@ -214,7 +214,7 @@ export default function Portfolio() {
           <span>Houston, Texas · Class of 2027</span>
         </div>
         <div className="footer-links">
-          <a href="mailto:amey.mishra2020@gmail.com">Email</a>
+          <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=amey.mishra2020%40gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email Amey Mishra in Gmail">Email</a>
           <a href="https://linkedin.com/in/amey-mishra/">LinkedIn</a>
           <a href="https://github.com/AmeyMishra2024">GitHub</a>
         </div>
